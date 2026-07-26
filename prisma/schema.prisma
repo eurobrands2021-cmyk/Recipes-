@@ -38,8 +38,28 @@ model Recipe {
   notes      String? // Teta's personal notes/tips
   reviewNote String? // What was corrected during review + why
 
+  // Per-locale content (ar = formal base, ar-EG = Egyptian colloquial, en).
+  translations RecipeTranslation[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model RecipeTranslation {
+  id       String @id @default(cuid())
+  recipeId String
+  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+
+  locale String // "ar" | "ar-EG" | "en"
+
+  title       String
+  ingredients String[] // free-text lines in this locale
+  steps       String[]
+  notes       String?
+  sourceNote  String?
+  reviewNote  String?
+
+  @@unique([recipeId, locale])
 }
 
 enum SourceType {

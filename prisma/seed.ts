@@ -3,11 +3,14 @@
 import { PrismaClient } from "@prisma/client";
 import { categories } from "../lib/categories";
 import { recipes } from "../lib/recipes-data";
+import { allLocaleContent } from "../lib/i18n/recipe-content";
+import { LOCALES } from "../lib/i18n/locales";
 
 const prisma = new PrismaClient();
 
 async function main() {
   // Clean slate so re-seeding is idempotent.
+  await prisma.recipeTranslation.deleteMany();
   await prisma.step.deleteMany();
   await prisma.ingredient.deleteMany();
   await prisma.recipe.deleteMany();
@@ -32,6 +35,7 @@ async function main() {
       console.warn(`Skipping "${r.titleAr}" — unknown category ${r.categorySlug}`);
       continue;
     }
+    const content = allLocaleContent(r);
     await prisma.recipe.create({
       data: {
         titleAr: r.titleAr,
@@ -48,12 +52,28 @@ async function main() {
         steps: {
           create: r.steps.map((text, order) => ({ text, order })),
         },
+        translations: {
+          create: LOCALES.map((locale) => {
+            const c = content[locale];
+            return {
+              locale,
+              title: c.title,
+              ingredients: c.ingredients,
+              steps: c.steps,
+              notes: c.notes,
+              sourceNote: c.sourceNote,
+              reviewNote: c.reviewNote,
+            };
+          }),
+        },
       },
     });
   }
 
   console.log(
-    `Seeded ${categories.length} categories and ${recipes.length} recipes.`,
+    `Seeded ${categories.length} categories, ${recipes.length} recipes, and ${
+      recipes.length * LOCALES.length
+    } translations.`,
   );
 }
 
