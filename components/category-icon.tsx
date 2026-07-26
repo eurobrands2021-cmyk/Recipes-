@@ -46,6 +46,13 @@ export function CategoryIcon({
           <path d="M9 22h6" />
         </svg>
       );
+    case "bread-dough":
+      return (
+        <svg {...common}>
+          <path d="M4 13a4 4 0 0 1 3-3.9 4 4 0 0 1 4-3.1 4 4 0 0 1 4 0 4 4 0 0 1 4 3.1A4 4 0 0 1 22 13c0 1.1-.9 2-2 2H6a2 2 0 0 1-2-2z" />
+          <path d="M8 15l1 4M12 15v4M16 15l-1 4" />
+        </svg>
+      );
     case "household":
       return (
         <svg {...common}>

@@ -18,25 +18,32 @@ export const categories: Category[] = [
     order: 2,
   },
   {
+    id: "cat-bread-dough",
+    nameAr: "خبز وعجائن",
+    nameEn: "Bread & Dough",
+    slug: "bread-dough",
+    order: 3,
+  },
+  {
     id: "cat-pickles",
     nameAr: "مخللات ومربى",
     nameEn: "Pickles & Preserves",
     slug: "pickles",
-    order: 3,
+    order: 4,
   },
   {
     id: "cat-spices",
     nameAr: "بهارات وصوصات",
     nameEn: "Spice Blends & Condiments",
     slug: "spices",
-    order: 4,
+    order: 5,
   },
   {
     id: "cat-household",
     nameAr: "منزلية",
     nameEn: "Household",
     slug: "household",
-    order: 5,
+    order: 6,
   },
 ];
 
