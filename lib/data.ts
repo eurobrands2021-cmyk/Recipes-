@@ -47,7 +47,13 @@ export async function getRecipesByCategory(
   return recipes
     .filter((r) => r.categorySlug === slug)
     .map(withCategory)
-    .sort((a, b) => (a.notebookPage ?? 0) - (b.notebookPage ?? 0));
+    // Order by notebook page; recipes without a page (reference/supplementary)
+    // sort to the end.
+    .sort(
+      (a, b) =>
+        (a.notebookPage ?? Number.MAX_SAFE_INTEGER) -
+        (b.notebookPage ?? Number.MAX_SAFE_INTEGER),
+    );
 }
 
 export async function getRecipe(
