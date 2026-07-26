@@ -1,0 +1,65 @@
+// Prisma schema for Teta's Cookbook (PRD §6).
+// The app runs in Mock Mode by default (no DB needed). This schema + the seed
+// in prisma/seed.ts exist so the same curated content can be loaded into a live
+// PostgreSQL database when MOCK_MODE=false.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id      String   @id @default(cuid())
+  nameAr  String
+  nameEn  String
+  slug    String   @unique
+  order   Int      @default(0)
+  recipes Recipe[]
+}
+
+model Recipe {
+  id           String @id @default(cuid())
+  titleAr      String
+  titleEn      String?
+  notebookPage Int? // original page number reference
+  categoryId   String
+  category     Category @relation(fields: [categoryId], references: [id])
+
+  sourceType SourceType @default(GRANDMOTHER_WRITTEN)
+  sourceNote String? // e.g. "من صحابة الجدة - فلانة"
+
+  ingredients Ingredient[]
+  steps       Step[]
+
+  notes      String? // Teta's personal notes/tips
+  reviewNote String? // What was corrected during review + why
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum SourceType {
+  GRANDMOTHER_WRITTEN // written by grandmother herself
+  INFERRED // logically reconstructed, not written
+  FRIEND_OR_RELATIVE // originally sourced from someone else, noted in her book
+}
+
+model Ingredient {
+  id       String @id @default(cuid())
+  recipeId String
+  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  text     String // free text (Arabic, includes quantity+unit as written)
+  order    Int
+}
+
+model Step {
+  id       String @id @default(cuid())
+  recipeId String
+  recipe   Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  text     String
+  order    Int
+}

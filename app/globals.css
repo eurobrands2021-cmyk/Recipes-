@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  body {
+    @apply bg-cream-50 text-ink-800 antialiased;
+    @apply dark:bg-ink-950 dark:text-cream-100;
+    font-feature-settings: "kern";
+  }
+
+  /* Larger, calmer base type for older family members reading on phones. */
+  html {
+    font-size: 17px;
+  }
+
+  ::selection {
+    @apply bg-clay-500/25;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Subtle paper grain for the warm heritage feel. */
+  .bg-paper {
+    background-image: radial-gradient(
+      rgba(193, 115, 74, 0.035) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+}
