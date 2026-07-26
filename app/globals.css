@@ -4,6 +4,43 @@
 
 :root {
   color-scheme: light;
+
+  /* Default accent — terracotta (clay). */
+  --accent-400: #d69368;
+  --accent-500: #c1734a;
+  --accent-600: #a95c37;
+  --accent-700: #8a4a2c;
+
+  /* Font swapping (SettingsProvider). Concrete faces come from next/font. */
+  --font-app: var(--font-tajawal);
+  --font-display: var(--font-cairo);
+}
+
+/* Alternate warm accent palettes. */
+:root[data-accent="olive"] {
+  --accent-400: #9a9c62;
+  --accent-500: #7a7c4b;
+  --accent-600: #63653c;
+  --accent-700: #4f5030;
+}
+:root[data-accent="rose"] {
+  --accent-400: #c98b8b;
+  --accent-500: #b06a6a;
+  --accent-600: #935252;
+  --accent-700: #77413f;
+}
+
+/* Arabic font choice. */
+:root[data-font="cairo"] {
+  --font-app: var(--font-cairo);
+}
+:root[data-font="tajawal"] {
+  --font-app: var(--font-tajawal);
+}
+/* English always uses Inter (must win over data-font — declared last). */
+:root[data-locale="en"] {
+  --font-app: var(--font-inter);
+  --font-display: var(--font-inter);
 }
 
 .dark {
@@ -23,7 +60,7 @@
   }
 
   ::selection {
-    @apply bg-clay-500/25;
+    background-color: color-mix(in srgb, var(--accent-500) 25%, transparent);
   }
 }
 
@@ -35,9 +72,50 @@
   /* Subtle paper grain for the warm heritage feel. */
   .bg-paper {
     background-image: radial-gradient(
-      rgba(193, 115, 74, 0.035) 1px,
+      color-mix(in srgb, var(--accent-500) 3.5%, transparent) 1px,
       transparent 1px
     );
     background-size: 22px 22px;
+  }
+
+  /* Checklist strike-through animation. */
+  .strike {
+    position: relative;
+  }
+  .strike > .strike-text {
+    transition: color 0.25s ease, opacity 0.25s ease;
+  }
+  .strike[data-done="true"] > .strike-text {
+    @apply text-ink-700/40 dark:text-cream-100/35;
+  }
+  .strike > .strike-text::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block: 50% auto;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: inline-start;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.5;
+  }
+  .strike[data-done="true"] > .strike-text::after {
+    transform: scaleX(1);
+  }
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  .animate-pop-in {
+    animation: pop-in 0.3s ease both;
   }
 }

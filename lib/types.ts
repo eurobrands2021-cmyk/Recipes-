@@ -35,3 +35,18 @@ export interface Recipe {
 export interface RecipeWithCategory extends Recipe {
   category: Category;
 }
+
+// Locale-resolved content for a single recipe (see lib/i18n).
+export interface RecipeContent {
+  title: string;
+  ingredients: string[];
+  steps: string[];
+  notes?: string;
+  sourceNote?: string;
+  reviewNote?: string;
+}
+
+// A per-locale override: any subset of fields; missing fields fall back to the
+// formal Arabic (`ar`) content derived from the base Recipe.
+export type RecipeOverride = Partial<RecipeContent>;
+export type OverrideMap = Record<string, RecipeOverride>;

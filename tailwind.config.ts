@@ -9,11 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        // Wired up in app/layout.tsx via next/font CSS variables.
-        sans: ["var(--font-tajawal)", "system-ui", "sans-serif"],
-        display: ["var(--font-cairo)", "var(--font-tajawal)", "system-ui", "sans-serif"],
+        // --font-app is switched in the SettingsProvider between Tajawal/Cairo
+        // (Arabic) and Inter (English). The next/font CSS variables are the
+        // concrete faces (see app/layout.tsx).
+        sans: ["var(--font-app)", "var(--font-tajawal)", "system-ui", "sans-serif"],
+        display: [
+          "var(--font-display)",
+          "var(--font-cairo)",
+          "var(--font-tajawal)",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       colors: {
+        // Switchable warm accent, driven by CSS vars set per data-accent.
+        accent: {
+          400: "var(--accent-400)",
+          500: "var(--accent-500)",
+          600: "var(--accent-600)",
+          700: "var(--accent-700)",
+        },
         // Warm, calm heritage palette (soft cream/beige + terracotta accent).
         cream: {
           50: "#fdfbf7",
