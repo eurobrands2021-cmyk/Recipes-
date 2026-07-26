@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { FavoriteButton } from "./favorite-button";
 import { SourceBadge } from "./source-badge";
+import { StarsDisplay } from "./star-rating";
+import { useRatings } from "./ratings-provider";
 import { useSettings } from "./settings-provider";
 import type { LocalizedCard } from "@/lib/localized";
 
@@ -14,6 +16,8 @@ export function RecipeCard({
   categoryName?: string;
 }) {
   const { locale } = useSettings();
+  const { getRating } = useRatings();
+  const rating = getRating(card.id);
 
   return (
     <div className="group relative flex items-center gap-2 rounded-2xl border border-cream-200 bg-cream-50/70 p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-accent-400/60 hover:bg-white dark:border-ink-800 dark:bg-ink-900/50 dark:hover:border-accent-500/50 dark:hover:bg-ink-900">
@@ -44,6 +48,7 @@ export function RecipeCard({
                 {card.notebookPage}
               </span>
             )}
+            {rating > 0 && <StarsDisplay value={rating} />}
           </div>
         </div>
       </Link>

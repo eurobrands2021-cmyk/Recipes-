@@ -11,6 +11,18 @@ no checkout, no monetization.
 
 ## Features
 
+- **Welcome message** — a decorative first-visit card with the family's dedication,
+  shown once per device (localStorage) and rereadable any time on the **About**
+  page (`/about`). Both read from a single editable source,
+  [`lib/welcome.ts`](lib/welcome.ts).
+- **Recipe ratings** — a 1–5 star rating per recipe, saved locally (no accounts);
+  the score shows on the card and detail page.
+- **"Surprise me"** — a header/home button that opens a random recipe.
+- **Serving scaler** — change the number of servings on a recipe and the
+  ingredient quantities scale mathematically (handles Arabic/Western digits,
+  `a/b`, vulgar-fraction glyphs like `½`, and fraction words like *نص/ربع*).
+- **Installable (PWA)** — a web manifest and icons so the family can add the site
+  to a phone home screen and open it like an app.
 - **Home / category grid** — clean, RTL, mobile-first tiles with recipe counts.
 - **Recipe list per category**.
 - **Recipe detail** — ingredients, numbered method, Teta's notes, a source badge
@@ -30,6 +42,9 @@ no checkout, no monetization.
 - **Arabic-aware search** across titles and ingredients in every locale (folds
   hamza, teh-marbuta, alef-maqsura and diacritics so spelling variations match).
 - **Share** — per-recipe link via the Web Share API, with clipboard fallback.
+- **Footer** — a quiet developer credit, plus a *request a recipe · share the
+  site* action (email to the address in [`lib/site.ts`](lib/site.ts), or the
+  device share sheet).
 - **Mock Mode** — runs entirely on curated seed data, no database required.
 
 ## Content sourcing

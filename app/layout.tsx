@@ -4,8 +4,10 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SettingsProvider, settingsNoFlashScript } from "@/components/settings-provider";
 import { FavoritesProvider } from "@/components/favorites-provider";
+import { RatingsProvider } from "@/components/ratings-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { WelcomeMessage } from "@/components/welcome-message";
 
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
@@ -66,6 +68,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SettingsProvider>
             <FavoritesProvider>
+             <RatingsProvider>
               <div className="min-h-dvh bg-paper">
                 <SiteHeader />
                 <main className="mx-auto w-full max-w-3xl px-4 pb-24 pt-4 sm:px-6">
@@ -73,6 +76,8 @@ export default function RootLayout({
                 </main>
                 <SiteFooter />
               </div>
+              <WelcomeMessage />
+             </RatingsProvider>
             </FavoritesProvider>
           </SettingsProvider>
         </ThemeProvider>

@@ -27,6 +27,22 @@ export type UIKey =
   | "recipeShareCopied"
   | "recipeStartCooking"
   | "recipeShareWithFamily"
+  | "ratingTitle"
+  | "ratingClear"
+  | "servingsTitle"
+  | "servingsHint"
+  | "servingsReset"
+  | "surprise"
+  | "aboutTitle"
+  | "aboutNav"
+  | "footerCredit"
+  | "footerRequest"
+  | "requestTitle"
+  | "requestRecipe"
+  | "requestRecipeDesc"
+  | "requestShare"
+  | "requestShareDesc"
+  | "requestClose"
   | "favoriteAdd"
   | "favoriteRemove"
   | "favoritesTitle"
@@ -95,6 +111,22 @@ const en: Dict = {
   recipeShareCopied: "Link copied",
   recipeStartCooking: "Start Cooking",
   recipeShareWithFamily: "Share it with the family",
+  ratingTitle: "Rate this recipe",
+  ratingClear: "Clear",
+  servingsTitle: "Servings",
+  servingsHint: "Adjust and the quantities scale with you.",
+  servingsReset: "Reset",
+  surprise: "Surprise me",
+  aboutTitle: "About this site",
+  aboutNav: "About",
+  footerCredit: "Built by her grandson, Ahmed Sameh Shaker",
+  footerRequest: "Request a recipe · Share the site",
+  requestTitle: "Get in touch",
+  requestRecipe: "Ask for a recipe",
+  requestRecipeDesc: "Want a specific dish added? Send a note.",
+  requestShare: "Share the whole site",
+  requestShareDesc: "Pass Teta's Kitchen on to the family.",
+  requestClose: "Close",
   favoriteAdd: "Add to favorites",
   favoriteRemove: "Remove from favorites",
   favoritesTitle: "Favorites",
@@ -163,6 +195,22 @@ const arFormal: Dict = {
   recipeShareCopied: "تم نسخ الرابط",
   recipeStartCooking: "ابدأ التحضير",
   recipeShareWithFamily: "شاركها مع العائلة",
+  ratingTitle: "قيّم الوصفة",
+  ratingClear: "مسح",
+  servingsTitle: "عدد الأفراد",
+  servingsHint: "غيّر العدد وتتغيّر المقادير معك تلقائياً.",
+  servingsReset: "إعادة",
+  surprise: "فاجئني",
+  aboutTitle: "عن الموقع",
+  aboutNav: "عن الموقع",
+  footerCredit: "تم تطوير الموقع من قِبل حفيدها أحمد سامح شاكر",
+  footerRequest: "اطلب وصفة · شارك الموقع",
+  requestTitle: "تواصل معنا",
+  requestRecipe: "اطلب وصفة",
+  requestRecipeDesc: "تريد إضافة طبق معيّن؟ راسِلنا.",
+  requestShare: "شارك الموقع كله",
+  requestShareDesc: "مرّر مطبخ الجدة إلى العائلة.",
+  requestClose: "إغلاق",
   favoriteAdd: "أضف إلى المفضلة",
   favoriteRemove: "إزالة من المفضلة",
   favoritesTitle: "المفضلة",
@@ -214,6 +262,9 @@ const arEG: Dict = {
   recipeTetaNotes: "نصايح الجدة",
   recipeStartCooking: "يلا نحضّر",
   recipeShareWithFamily: "ابعتها للعيلة",
+  servingsHint: "غيّر العدد والمقادير هتتحسب معاك لوحدها.",
+  requestRecipeDesc: "عايز طبق معيّن يتضاف؟ ابعت لنا.",
+  requestShareDesc: "مرّر مطبخ الجدة للعيلة.",
   cookingPrepDone: "المقادير جاهزة — يلا نبدأ الطريقة",
   cookingStartMethod: "يلا نبدأ الطريقة",
   cookingResume: "كمّل تحضير",

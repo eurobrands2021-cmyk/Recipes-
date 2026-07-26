@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSettings } from "./settings-provider";
+import { SurpriseButton } from "./surprise-button";
 import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
@@ -33,6 +34,7 @@ export function SiteHeader() {
         </Link>
 
         <nav className="flex items-center gap-1.5">
+          <SurpriseButton />
           <Link
             href="/favorites"
             aria-label={t("navFavorites")}
