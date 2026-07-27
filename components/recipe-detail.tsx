@@ -12,6 +12,7 @@ import { StarRating } from "./star-rating";
 import { useSettings } from "./settings-provider";
 import { categoryName } from "@/lib/localized";
 import { scaleIngredient, hasScalableQuantities } from "@/lib/scale";
+import { ingredientEmoji, stepEmoji } from "@/lib/emoji";
 import type { RecipeBundle } from "@/lib/localized";
 import type { Category } from "@/lib/types";
 
@@ -144,17 +145,26 @@ export function RecipeDetail({
           </p>
         )}
         <ul className="overflow-hidden rounded-2xl border border-cream-200 bg-cream-50/60 dark:border-ink-800 dark:bg-ink-900/40">
-          {shownIngredients.map((item, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-3 border-b border-cream-200/70 px-4 py-3 last:border-b-0 dark:border-ink-800/70"
-            >
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-400" aria-hidden />
-              <span className="leading-relaxed text-ink-800 dark:text-cream-100/90">
-                {item}
-              </span>
-            </li>
-          ))}
+          {shownIngredients.map((item, i) => {
+            const emoji = ingredientEmoji(item);
+            return (
+              <li
+                key={i}
+                className="flex items-start gap-3 border-b border-cream-200/70 px-4 py-3 last:border-b-0 dark:border-ink-800/70"
+              >
+                {emoji ? (
+                  <span className="w-6 shrink-0 text-center text-lg leading-relaxed" aria-hidden>
+                    {emoji}
+                  </span>
+                ) : (
+                  <span className="mt-2 ms-2.5 me-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-400" aria-hidden />
+                )}
+                <span className="leading-relaxed text-ink-800 dark:text-cream-100/90">
+                  {item}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
@@ -167,19 +177,23 @@ export function RecipeDetail({
           {t("recipeMethod")}
         </h2>
         <ol className="space-y-3">
-          {c.steps.map((step, i) => (
-            <li
-              key={i}
-              className="flex gap-3 rounded-2xl border border-cream-200 bg-cream-50/60 p-4 dark:border-ink-800 dark:bg-ink-900/40"
-            >
-              <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent-500/15 font-display text-sm font-bold text-accent-600 dark:text-accent-400">
-                {i + 1}
-              </span>
-              <p className="pt-0.5 leading-relaxed text-ink-800 dark:text-cream-100/90">
-                {step}
-              </p>
-            </li>
-          ))}
+          {c.steps.map((step, i) => {
+            const emoji = stepEmoji(step);
+            return (
+              <li
+                key={i}
+                className="flex gap-3 rounded-2xl border border-cream-200 bg-cream-50/60 p-4 dark:border-ink-800 dark:bg-ink-900/40"
+              >
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-accent-500/15 font-display text-sm font-bold text-accent-600 dark:text-accent-400">
+                  {i + 1}
+                </span>
+                <p className="pt-0.5 leading-relaxed text-ink-800 dark:text-cream-100/90">
+                  {emoji && <span aria-hidden>{emoji} </span>}
+                  {step}
+                </p>
+              </li>
+            );
+          })}
         </ol>
       </section>
 

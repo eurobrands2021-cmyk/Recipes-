@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { CookingTimer } from "./cooking-timer";
 import { useSettings } from "./settings-provider";
 import { parseDurationSeconds, servingChecks } from "@/lib/cooking";
+import { ingredientEmoji, stepEmoji } from "@/lib/emoji";
 import type { Locale } from "@/lib/i18n/locales";
 
 interface CookingState {
@@ -182,6 +183,9 @@ export function CookingMode({
                     )}
                   </span>
                   <span className="strike-text text-lg leading-relaxed text-ink-800 dark:text-cream-100/90">
+                    {ingredientEmoji(item) && (
+                      <span aria-hidden>{ingredientEmoji(item)} </span>
+                    )}
                     {item}
                   </span>
                 </button>
@@ -215,6 +219,9 @@ export function CookingMode({
                 {current + 1}
               </span>
               <p className="mt-4 text-2xl font-medium leading-relaxed text-ink-800 dark:text-cream-100">
+                {stepEmoji(steps[current] ?? "") && (
+                  <span aria-hidden>{stepEmoji(steps[current] ?? "")} </span>
+                )}
                 {steps[current]}
               </p>
               {stepDuration != null && <CookingTimer seconds={stepDuration} />}
