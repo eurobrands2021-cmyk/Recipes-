@@ -3,7 +3,7 @@ import { categoryBySlug } from "@/lib/categories";
 import { getRecipeBundle } from "@/lib/localized";
 import { recipes } from "@/lib/recipes-data";
 
-export const alt = "وصفة من مطبخ الجدة";
+export const alt = "وصفة من دفتر تيتا";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
@@ -19,7 +19,7 @@ export default function OpengraphImage({
 }) {
   const bundle = getRecipeBundle(params.id);
   if (!bundle) {
-    return renderOgImage({ title: "مطبخ الجدة", chip: "صدقة جارية" });
+    return renderOgImage({ title: "وصفة تيتا", chip: "أكل العيلة" });
   }
   const c = bundle.content["ar-EG"] ?? bundle.content.ar;
   const category = categoryBySlug(bundle.categorySlug);

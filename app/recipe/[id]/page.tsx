@@ -18,7 +18,7 @@ export function generateMetadata({
   if (!bundle) return { title: "وصفة غير موجودة" };
   const ar = bundle.content["ar-EG"] ?? bundle.content.ar;
   const category = categoryBySlug(bundle.categorySlug);
-  const description = `${ar.title} — من مطبخ الجدة${
+  const description = `${ar.title} — من مطبخ تيتا${
     category ? ` · ${category.nameAr}` : ""
   }. ${ar.ingredients.slice(0, 4).join("، ")}`;
   return {

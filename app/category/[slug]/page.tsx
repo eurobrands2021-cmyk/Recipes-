@@ -16,20 +16,20 @@ export function generateMetadata({
   const category = categoryBySlug(params.slug);
   if (!category) return { title: "قسم" };
   const count = categoryCounts()[category.slug] ?? 0;
-  const description = `${category.nameAr} — ${count} وصفة من دفتر الجدة المكتوب بخط يدها.`;
+  const description = `${category.nameAr} — ${count} وصفة من دفتر تيتا المكتوب بخط إيدها.`;
   return {
     title: category.nameAr,
     description,
     alternates: { canonical: `/category/${category.slug}` },
     openGraph: {
-      title: `${category.nameAr} · مطبخ الجدة`,
+      title: `${category.nameAr} · وصفة تيتا`,
       description,
       type: "website",
       url: `/category/${category.slug}`,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category.nameAr} · مطبخ الجدة`,
+      title: `${category.nameAr} · وصفة تيتا`,
       description,
     },
   };

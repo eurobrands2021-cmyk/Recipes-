@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SettingsProvider, settingsNoFlashScript } from "@/components/settings-provider";
 import { FavoritesProvider } from "@/components/favorites-provider";
+import { RatingsProvider } from "@/components/ratings-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { siteUrl, SITE_NAME_AR } from "@/lib/site";
@@ -30,27 +31,36 @@ const inter = Inter({
 });
 
 const DESCRIPTION =
-  "أرشيف رقمي لوصفات الجدة المكتوبة بخط يدها — صدقة جارية لها، يتصفحها ويطبخ منها أفراد العائلة.";
+  "دفتر وصفات تيتا المكتوب بخط يدها — أكل العيلة اللي بيجمعنا، محفوظ لكل أفراد العائلة نرجعله ونطبخ منه.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "مطبخ الجدة — صدقة جارية",
-    template: "%s · مطبخ الجدة",
+    default: "وصفة تيتا — دفتر أكل العيلة",
+    template: "%s · وصفة تيتا",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME_AR,
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg" }],
+  },
+  appleWebApp: {
+    capable: true,
+    title: SITE_NAME_AR,
+    statusBarStyle: "default",
+  },
   openGraph: {
-    title: "مطبخ الجدة — صدقة جارية",
-    description: "أرشيف رقمي لوصفات الجدة المكتوبة بخط يدها — صدقة جارية لها.",
+    title: "وصفة تيتا — دفتر أكل العيلة",
+    description: DESCRIPTION,
     siteName: SITE_NAME_AR,
     locale: "ar_EG",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "مطبخ الجدة — صدقة جارية",
-    description: "أرشيف رقمي لوصفات الجدة المكتوبة بخط يدها — صدقة جارية لها.",
+    title: "وصفة تيتا — دفتر أكل العيلة",
+    description: DESCRIPTION,
   },
 };
 
@@ -85,6 +95,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SettingsProvider>
             <FavoritesProvider>
+              <RatingsProvider>
               <div className="min-h-dvh bg-paper">
                 <SiteHeader />
                 <main className="mx-auto w-full max-w-3xl px-4 pb-24 pt-4 sm:px-6">
@@ -92,6 +103,7 @@ export default function RootLayout({
                 </main>
                 <SiteFooter />
               </div>
+              </RatingsProvider>
             </FavoritesProvider>
           </SettingsProvider>
         </ThemeProvider>

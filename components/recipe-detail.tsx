@@ -1,17 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { CategoryIcon } from "./category-icon";
 import { CookingMode } from "./cooking-mode";
 import { FavoriteButton } from "./favorite-button";
 import { ReviewNote } from "./review-note";
 import { ShareButton } from "./share-button";
 import { SourceBadge } from "./source-badge";
+import { StarRating } from "./star-rating";
 import { useSettings } from "./settings-provider";
 import { categoryName } from "@/lib/localized";
+import { scaleIngredient, hasScalableQuantities } from "@/lib/scale";
 import type { RecipeBundle } from "@/lib/localized";
 import type { Category } from "@/lib/types";
+
+const SCALE_OPTIONS = [
+  { value: 0.5, label: "×½" },
+  { value: 1, label: "×1" },
+  { value: 2, label: "×2" },
+  { value: 3, label: "×3" },
+];
 
 export function RecipeDetail({
   bundle,
@@ -22,7 +31,20 @@ export function RecipeDetail({
 }) {
   const { locale, t } = useSettings();
   const [cooking, setCooking] = useState(false);
+  const [scale, setScale] = useState(1);
   const c = bundle.content[locale];
+
+  const scalable = useMemo(
+    () => hasScalableQuantities(c.ingredients),
+    [c.ingredients],
+  );
+  const shownIngredients = useMemo(
+    () =>
+      scale === 1
+        ? c.ingredients
+        : c.ingredients.map((line) => scaleIngredient(line, scale)),
+    [c.ingredients, scale],
+  );
 
   return (
     <article className="space-y-8 pt-2">
@@ -81,15 +103,48 @@ export function RecipeDetail({
 
       {/* Ingredients */}
       <section>
-        <h2 className="mb-3 flex items-center gap-2 font-display text-lg font-bold text-ink-800 dark:text-cream-100">
-          <svg viewBox="0 0 24 24" className="h-5 w-5 text-accent-500" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-            <path d="M5 3h14l-1 7a6 6 0 0 1-12 0z" />
-            <path d="M9 21h6M12 16v5" />
-          </svg>
-          {t("recipeIngredients")}
-        </h2>
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+          <h2 className="flex items-center gap-2 font-display text-lg font-bold text-ink-800 dark:text-cream-100">
+            <svg viewBox="0 0 24 24" className="h-5 w-5 text-accent-500" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M5 3h14l-1 7a6 6 0 0 1-12 0z" />
+              <path d="M9 21h6M12 16v5" />
+            </svg>
+            {t("recipeIngredients")}
+          </h2>
+          {scalable && (
+            <div
+              className="inline-flex items-center gap-1 rounded-full border border-cream-300 bg-cream-50/70 p-1 dark:border-ink-700 dark:bg-ink-900/50"
+              role="group"
+              aria-label={t("scaleTitle")}
+            >
+              {SCALE_OPTIONS.map((o) => {
+                const active = o.value === scale;
+                return (
+                  <button
+                    key={o.value}
+                    type="button"
+                    onClick={() => setScale(o.value)}
+                    aria-pressed={active}
+                    className={`min-h-9 min-w-11 rounded-full px-3 text-sm font-semibold transition-all active:scale-95 ${
+                      active
+                        ? "bg-accent-500 text-white"
+                        : "text-ink-700/70 hover:text-accent-600 dark:text-cream-100/60 dark:hover:text-accent-400"
+                    }`}
+                  >
+                    {o.label}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+        {scalable && scale !== 1 && (
+          <p className="mb-2 text-xs text-ink-700/55 dark:text-cream-100/45">
+            {t("scaleHint")}
+          </p>
+        )}
         <ul className="overflow-hidden rounded-2xl border border-cream-200 bg-cream-50/60 dark:border-ink-800 dark:bg-ink-900/40">
-          {c.ingredients.map((item, i) => (
+          {shownIngredients.map((item, i) => (
             <li
               key={i}
               className="flex items-start gap-3 border-b border-cream-200/70 px-4 py-3 last:border-b-0 dark:border-ink-800/70"
@@ -146,6 +201,9 @@ export function RecipeDetail({
       {/* Review note */}
       {c.reviewNote && <ReviewNote note={c.reviewNote} />}
 
+      {/* Rating */}
+      <StarRating id={bundle.id} />
+
       {/* Share */}
       <div className="flex items-center justify-between border-t border-cream-200/70 pt-6 dark:border-ink-800/70">
         <p className="text-xs text-ink-700/50 dark:text-cream-100/40">
@@ -158,7 +216,7 @@ export function RecipeDetail({
         <CookingMode
           recipeId={bundle.id}
           title={c.title}
-          ingredients={c.ingredients}
+          ingredients={shownIngredients}
           steps={c.steps}
           notes={c.notes}
           onClose={() => setCooking(false)}

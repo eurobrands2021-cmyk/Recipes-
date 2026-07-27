@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CategoryIcon } from "./category-icon";
 import { FavoriteButton } from "./favorite-button";
 import { SourceBadge } from "./source-badge";
+import { StarsInline } from "./star-rating";
 import { useSettings } from "./settings-provider";
 import type { LocalizedCard } from "@/lib/localized";
 
@@ -49,6 +50,7 @@ export function RecipeCard({
                 {card.notebookPage}
               </span>
             )}
+            <StarsInline id={card.id} />
           </div>
         </div>
       </Link>

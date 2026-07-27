@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { CategoryIcon } from "./category-icon";
 import { Search } from "./search";
+import { SurpriseButton } from "./surprise-button";
 import { useSettings } from "./settings-provider";
 import { categoryCounts, localizedCategories } from "@/lib/localized";
 
@@ -25,8 +26,11 @@ export function HomeView() {
         </p>
       </section>
 
-      <section>
+      <section className="space-y-3">
         <Search />
+        <div className="flex justify-center">
+          <SurpriseButton variant="button" />
+        </div>
       </section>
 
       <section>

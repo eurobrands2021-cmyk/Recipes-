@@ -73,20 +73,24 @@ export type UIKey =
   | "notFoundBack"
   | "notFoundHome"
   | "navAbout"
+  | "navSurprise"
   | "aboutTitle"
-  | "aboutBody"
-  | "aboutHeritage";
+  | "ratingTitle"
+  | "ratingYours"
+  | "ratingClear"
+  | "scaleTitle"
+  | "scaleHint";
 
 type Dict = Record<UIKey, string>;
 
 const en: Dict = {
-  appName: "Teta's Kitchen",
-  dedicationKicker: "An ongoing charity",
-  dedicationTitle: "From Teta's Kitchen",
+  appName: "Teta's Recipe",
+  dedicationKicker: "The food that keeps us together",
+  dedicationTitle: "Teta's Recipe",
   dedicationSub:
-    "Her handwritten recipe notebook, kept for the whole family — to browse, cook from, and remember her with a kind prayer.",
-  footerLine: "From Teta's kitchen… an ongoing charity in her name",
-  footerSub: "May it be counted among her good deeds",
+    "A little notebook that always sat on my grandmother's kitchen shelf, holding every dish she used to make for us. We don't ask much of this site — just that the food which brings our family together stays with us, that we can come back to it whenever we like, and cook it exactly the way she did. May God have mercy on her and grant her peace.",
+  footerLine: "Teta's Recipe — the family's kitchen notebook",
+  footerSub: "In her loving memory",
   sectionCategories: "Categories",
   countRecipes: "recipes",
   searchPlaceholder: "Search for a recipe or an ingredient…",
@@ -150,24 +154,26 @@ const en: Dict = {
   notFoundTitle: "This page isn't here",
   notFoundBody:
     "The recipe may have moved to another spot — let's head back to the kitchen.",
-  notFoundBack: "Back to Teta's Kitchen",
+  notFoundBack: "Back to Teta's Recipe",
   notFoundHome: "Browse the recipes",
   navAbout: "About",
-  aboutTitle: "About Teta's Kitchen",
-  aboutBody:
-    "This is Teta's handwritten recipe notebook, kept online for the whole family — to browse, cook from, and remember her with a kind prayer. May every dish cooked from it be an ongoing charity in her name.",
-  aboutHeritage:
-    "Every recipe here was written or noted in her own hand. Some methods were gently reconstructed where a step was only implied; those are marked so nothing is mistaken for her exact words.",
+  navSurprise: "Surprise me",
+  aboutTitle: "About Teta's Recipe",
+  ratingTitle: "Rating",
+  ratingYours: "Your rating",
+  ratingClear: "Clear",
+  scaleTitle: "Amount",
+  scaleHint: "Adjust the quantities to what you're cooking.",
 };
 
 const arFormal: Dict = {
-  appName: "مطبخ الجدة",
-  dedicationKicker: "صدقة جارية",
-  dedicationTitle: "من مطبخ الجدة",
+  appName: "وصفة تيتا",
+  dedicationKicker: "أكل العيلة",
+  dedicationTitle: "وصفة تيتا",
   dedicationSub:
-    "دفتر وصفاتها المكتوب بخط يدها، محفوظاً لأجيال العائلة — نتصفحه، نطبخ منه، ونذكرها بدعوة خير.",
-  footerLine: "من مطبخ الجدة... صدقة جارية لها",
-  footerSub: "اللهم اجعله في ميزان حسناتها",
+    "دفترٌ صغير، كان دائماً على رفّ مطبخ جدتي، فيه كل الوصفات التي كانت تُعِدّها لنا. لا نطلب من هذا الموقع شيئاً كبيراً، فقط أن يبقى الطعام الذي يجمعنا كعائلة موجوداً، نعود إليه متى شئنا، ونطبخه تماماً كما كانت تصنعه. رحمها الله وأسكنها فسيح جناته.",
+  footerLine: "وصفة تيتا — دفتر أكل العيلة",
+  footerSub: "الله يرحمها",
   sectionCategories: "الأقسام",
   countRecipes: "وصفة",
   searchPlaceholder: "ابحث عن وصفة أو مكوّن...",
@@ -230,20 +236,22 @@ const arFormal: Dict = {
   sourceFriend: "من صحاب الجدة",
   notFoundTitle: "هذه الصفحة غير موجودة",
   notFoundBody: "قد تكون الوصفة قد انتقلت إلى مكان آخر — لنَعُد إلى المطبخ.",
-  notFoundBack: "العودة إلى مطبخ الجدة",
+  notFoundBack: "العودة إلى وصفة تيتا",
   notFoundHome: "تصفّح الوصفات",
-  navAbout: "عن المطبخ",
-  aboutTitle: "عن مطبخ الجدة",
-  aboutBody:
-    "هذا دفتر وصفات الجدة المكتوب بخط يدها، محفوظاً على الإنترنت لكل أفراد العائلة — نتصفحه، ونطبخ منه، ونذكرها بدعوة خير. اللهم اجعل كل طبق يُطبخ منه صدقة جارية باسمها.",
-  aboutHeritage:
-    "كل وصفة هنا كُتبت أو دُوّنت بخط يدها. بعض الطرق أُعيد بناؤها بلطف حين كانت الخطوة مُلمّحاً إليها فقط، وهذه مُعلَّمة حتى لا يختلط شيء بكلامها الأصلي.",
+  navAbout: "عن الموقع",
+  navSurprise: "فاجئني",
+  aboutTitle: "عن وصفة تيتا",
+  ratingTitle: "التقييم",
+  ratingYours: "تقييمك",
+  ratingClear: "مسح",
+  scaleTitle: "الكمية",
+  scaleHint: "زوّد أو قلّل المقادير حسب اللي بتطبخه.",
 };
 
 const arEG: Dict = {
   ...arFormal,
   dedicationSub:
-    "دفتر وصفاتها اللي كاتباه بخط إيدها، محفوظ لكل العيلة — نتفرج عليه، نطبخ منه، ونفتكرها بدعوة حلوة.",
+    "دفتر صغير، كان دايماً على رف مطبخ جدتي، فيه كل الوصفات الي كانت بتعملهلنا. مش عايزين حاجة كبيرة من الموقع ده، بس عايزين إن الأكل اللي بيجمعنا كعيلة يفضل موجود، ونقدر نرجعله وقت ما حبينا، ونطبخه بالظبط زي ما كانت بتعمله. الله يرحمها ويسكنها فسيح جناته.",
   searchPlaceholder: "دوّر على وصفة أو مكوّن...",
   searchNone: "مفيش وصفة بتطابق اللي بتدوّر عليه.",
   recipeTetaNotes: "نصايح الجدة",
@@ -263,15 +271,12 @@ const arEG: Dict = {
   settingsAccentHint: "لون دافي واحد يميّز التطبيق.",
   settingsTheme: "الشكل",
   notFoundTitle: "الصفحة دي مش موجودة",
-  notFoundBody: "يمكن الوصفة اتنقلت مكان… تعالى نرجع للمطبخ تاني.",
-  notFoundBack: "ارجع لمطبخ الجدة",
+  notFoundBody: "يمكن الوصفة اتنقلت مكان… تعالى نرجع تاني.",
+  notFoundBack: "ارجع لوصفة تيتا",
   notFoundHome: "اتفرج على الوصفات",
-  navAbout: "عن المطبخ",
-  aboutTitle: "عن مطبخ الجدة",
-  aboutBody:
-    "ده دفتر وصفات الجدة اللي كاتباه بخط إيدها، متحفوظ على النت لكل العيلة — نتفرج عليه، ونطبخ منه، ونفتكرها بدعوة حلوة. اللهم اجعل كل طبق يتطبخ منه صدقة جارية باسمها.",
-  aboutHeritage:
-    "كل وصفة هنا اتكتبت أو اتدوّنت بخط إيدها. بعض الطرق اترتّبت بلطف لما الخطوة كانت مفهومة ضمنياً بس، ودي متعلّمة عشان محدش يخلط بينها وبين كلامها بالظبط.",
+  navAbout: "عن الموقع",
+  aboutTitle: "عن وصفة تيتا",
+  scaleHint: "زوّد أو قلّل المقادير حسب اللي بتطبخه.",
 };
 
 export const UI: Record<Locale, Dict> = {

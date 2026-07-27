@@ -112,7 +112,7 @@ export interface OgImageOptions {
 }
 
 export function renderOgImage({
-  eyebrow = "بخط يدها · صدقة جارية",
+  eyebrow = "دفتر أكل العيلة · بخط يدها",
   title,
   subtitle,
   chip,
@@ -181,7 +181,7 @@ export function renderOgImage({
                 lineHeight: 1.1,
               }}
             >
-              مطبخ الجدة
+              وصفة تيتا
             </div>
             <div style={{ fontSize: 24, color: tint, marginTop: 4 }}>
               {eyebrow}
@@ -241,7 +241,7 @@ export function renderOgImage({
             </div>
           </div>
           <div style={{ fontSize: 26, color: "#8a7a68" }}>
-            اللهم اجعله في ميزان حسناتها
+            الله يرحمها ويسكنها فسيح جناته
           </div>
         </div>
       </div>

@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import { AboutView } from "@/components/about-view";
 
 const description =
-  "دفتر وصفات الجدة المكتوب بخط يدها، محفوظاً لكل أفراد العائلة — صدقة جارية باسمها.";
+  "دفتر وصفات تيتا المكتوب بخط إيدها، محفوظ لكل أفراد العائلة — أكل البيت اللي بيجمعنا.";
 
 export const metadata: Metadata = {
-  title: "عن المطبخ",
+  title: "عن الموقع",
   description,
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "عن مطبخ الجدة",
+    title: "عن وصفة تيتا",
     description,
     type: "website",
     url: "/about",
   },
   twitter: {
     card: "summary_large_image",
-    title: "عن مطبخ الجدة",
+    title: "عن وصفة تيتا",
     description,
   },
 };

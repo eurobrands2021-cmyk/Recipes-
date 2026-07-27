@@ -144,7 +144,7 @@ export function SettingsView() {
         >
           {locale === "en"
             ? "The quick brown fox"
-            : "بالهنا والشفا على مطبخ الجدة"}
+            : "بالهنا والشفا من وصفة تيتا"}
         </p>
       </Section>
 

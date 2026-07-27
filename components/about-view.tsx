@@ -31,11 +31,9 @@ export function AboutView() {
         </p>
       </header>
 
-      <section className="space-y-4 rounded-2xl border border-cream-200 bg-cream-50/60 p-6 leading-relaxed text-ink-800/90 dark:border-ink-800 dark:bg-ink-900/40 dark:text-cream-100/85">
-        <p>{t("aboutBody")}</p>
-        <p className="border-t border-cream-200/70 pt-4 text-sm text-ink-700/70 dark:border-ink-800/70 dark:text-cream-100/60">
-          {t("aboutHeritage")}
-        </p>
+      <section className="rounded-2xl border border-cream-200 bg-cream-50/60 p-6 text-lg leading-loose text-ink-800/90 dark:border-ink-800 dark:bg-ink-900/40 dark:text-cream-100/85">
+        {/* Single shared dedication — same text as the home welcome message. */}
+        <p>{t("dedicationSub")}</p>
       </section>
 
       <div className="flex justify-center">
