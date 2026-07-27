@@ -16,10 +16,26 @@ export function generateMetadata({
 }): Metadata {
   const bundle = getRecipeBundle(params.id);
   if (!bundle) return { title: "وصفة غير موجودة" };
-  const ar = bundle.content.ar;
+  const ar = bundle.content["ar-EG"] ?? bundle.content.ar;
+  const category = categoryBySlug(bundle.categorySlug);
+  const description = `${ar.title} — من مطبخ الجدة${
+    category ? ` · ${category.nameAr}` : ""
+  }. ${ar.ingredients.slice(0, 4).join("، ")}`;
   return {
     title: ar.title,
-    description: `${ar.title} — من مطبخ الجدة. ${ar.ingredients.slice(0, 4).join("، ")}`,
+    description,
+    alternates: { canonical: `/recipe/${bundle.id}` },
+    openGraph: {
+      title: ar.title,
+      description,
+      type: "article",
+      url: `/recipe/${bundle.id}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ar.title,
+      description,
+    },
   };
 }
 

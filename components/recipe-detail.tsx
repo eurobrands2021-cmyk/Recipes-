@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { CategoryIcon } from "./category-icon";
 import { CookingMode } from "./cooking-mode";
 import { FavoriteButton } from "./favorite-button";
 import { ReviewNote } from "./review-note";
@@ -27,11 +28,14 @@ export function RecipeDetail({
     <article className="space-y-8 pt-2">
       <Link
         href={`/category/${category.slug}`}
-        className="inline-flex items-center gap-1.5 text-sm text-ink-700/60 transition hover:text-accent-600 dark:text-cream-100/50 dark:hover:text-accent-400"
+        className="group inline-flex min-h-11 items-center gap-2 text-sm text-ink-700/60 transition hover:text-accent-600 dark:text-cream-100/50 dark:hover:text-accent-400"
       >
-        <svg viewBox="0 0 24 24" className="h-4 w-4 rtl:-scale-x-100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <svg viewBox="0 0 24 24" className="h-4 w-4 rtl:-scale-x-100 transition-transform group-hover:-translate-x-0.5 rtl:group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
           <path d="M15 18l-6-6 6-6" />
         </svg>
+        <span className="grid h-6 w-6 place-items-center rounded-md bg-accent-500/10 text-accent-600 dark:text-accent-400">
+          <CategoryIcon slug={category.slug} className="h-3.5 w-3.5" />
+        </span>
         {categoryName(category, locale)}
       </Link>
 

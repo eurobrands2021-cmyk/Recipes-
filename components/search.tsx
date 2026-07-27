@@ -64,7 +64,7 @@ export function Search() {
                   <li key={c.id}>
                     <Link
                       href={`/recipe/${c.id}`}
-                      className="flex items-center justify-between gap-3 rounded-xl border border-cream-200 bg-cream-50/70 px-4 py-3 transition hover:border-accent-400/60 hover:bg-white dark:border-ink-800 dark:bg-ink-900/50 dark:hover:bg-ink-900"
+                      className="flex min-h-14 items-center justify-between gap-3 rounded-xl border border-cream-200 bg-cream-50/70 px-4 py-3 transition-all hover:border-accent-400/60 hover:bg-white active:scale-[0.99] dark:border-ink-800 dark:bg-ink-900/50 dark:hover:bg-ink-900"
                     >
                       <span className="min-w-0">
                         <span className="block truncate font-display font-bold text-ink-800 dark:text-cream-100">

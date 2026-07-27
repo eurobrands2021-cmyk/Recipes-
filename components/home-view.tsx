@@ -41,7 +41,7 @@ export function HomeView() {
               <Link
                 key={cat.id}
                 href={`/category/${cat.slug}`}
-                className="group flex flex-col items-start gap-3 rounded-2xl border border-cream-200 bg-cream-50/70 p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-accent-400/60 hover:bg-white dark:border-ink-800 dark:bg-ink-900/50 dark:hover:border-accent-500/50 dark:hover:bg-ink-900"
+                className="group flex flex-col items-start gap-3 rounded-2xl border border-cream-200 bg-cream-50/70 p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-accent-400/60 hover:bg-white active:translate-y-0 active:shadow-none dark:border-ink-800 dark:bg-ink-900/50 dark:hover:border-accent-500/50 dark:hover:bg-ink-900"
               >
                 <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent-500/12 text-accent-600 transition-transform group-hover:scale-110 dark:text-accent-400">
                   <CategoryIcon slug={cat.slug} />

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { RecipeCard } from "./recipe-card";
+import { RecipeListSkeleton } from "./skeletons";
 import { useFavorites } from "./favorites-provider";
 import { useSettings } from "./settings-provider";
 import { cardById, localizedCategories } from "@/lib/localized";
@@ -30,12 +31,14 @@ export function FavoritesView() {
             {t("favoritesTitle")}
           </h1>
           <p className="text-sm text-ink-700/55 dark:text-cream-100/45">
-            {savedCards.length} {t("countRecipes")}
+            {ready ? `${savedCards.length} ${t("countRecipes")}` : "…"}
           </p>
         </div>
       </header>
 
-      {ready && savedCards.length === 0 ? (
+      {!ready ? (
+        <RecipeListSkeleton count={3} />
+      ) : savedCards.length === 0 ? (
         <div className="rounded-2xl border border-dashed border-cream-300 bg-cream-50/50 px-6 py-12 text-center dark:border-ink-800 dark:bg-ink-900/40">
           <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-accent-500/10 text-accent-500/70">
             <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

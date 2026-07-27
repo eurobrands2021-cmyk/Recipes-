@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CategoryIcon } from "./category-icon";
 import { FavoriteButton } from "./favorite-button";
 import { SourceBadge } from "./source-badge";
 import { useSettings } from "./settings-provider";
@@ -16,11 +17,15 @@ export function RecipeCard({
   const { locale } = useSettings();
 
   return (
-    <div className="group relative flex items-center gap-2 rounded-2xl border border-cream-200 bg-cream-50/70 p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-accent-400/60 hover:bg-white dark:border-ink-800 dark:bg-ink-900/50 dark:hover:border-accent-500/50 dark:hover:bg-ink-900">
+    <div className="group relative flex items-center gap-2 rounded-2xl border border-cream-200 bg-cream-50/70 p-4 shadow-card transition-all hover:-translate-y-0.5 hover:border-accent-400/60 hover:bg-white active:translate-y-0 active:shadow-none dark:border-ink-800 dark:bg-ink-900/50 dark:hover:border-accent-500/50 dark:hover:bg-ink-900">
       <Link
         href={`/recipe/${card.id}`}
         className="flex min-w-0 flex-1 items-center gap-3"
       >
+        {/* Line-art category mark stands in for the missing food photo. */}
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent-500/10 text-accent-600 transition-transform duration-200 group-hover:scale-105 group-hover:bg-accent-500/15 dark:text-accent-400">
+          <CategoryIcon slug={card.categorySlug} className="h-5 w-5" />
+        </span>
         <div className="min-w-0 flex-1">
           <h3 className="truncate font-display text-lg font-bold text-ink-800 group-hover:text-accent-600 dark:text-cream-100 dark:group-hover:text-accent-400">
             {card.title[locale]}

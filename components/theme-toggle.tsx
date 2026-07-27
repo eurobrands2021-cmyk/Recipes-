@@ -20,7 +20,7 @@ export function ThemeToggle() {
       aria-label={isDark ? t("settingsThemeLight") : t("settingsThemeDark")}
       title={isDark ? t("settingsThemeLight") : t("settingsThemeDark")}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream-300 bg-cream-50/60 text-ink-700 transition-colors hover:bg-cream-200 hover:text-accent-600 dark:border-ink-700 dark:bg-ink-900/60 dark:text-cream-100 dark:hover:bg-ink-800"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream-300 bg-cream-50/60 text-ink-700 transition-all hover:bg-cream-200 hover:text-accent-600 active:scale-90 dark:border-ink-700 dark:bg-ink-900/60 dark:text-cream-100 dark:hover:bg-ink-800"
     >
       {!mounted ? (
         <span className="h-5 w-5" />

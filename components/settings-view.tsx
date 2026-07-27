@@ -6,6 +6,7 @@ import {
   useSettings,
   type Accent,
   type ArabicFont,
+  type FontSize,
 } from "./settings-provider";
 import { LOCALES, localeLabel, type Locale } from "@/lib/i18n/locales";
 
@@ -29,7 +30,7 @@ function Segmented<T extends string>({
             key={o.value}
             type="button"
             onClick={() => onChange(o.value)}
-            className={`rounded-xl border px-3 py-3 text-center transition ${
+            className={`min-h-12 rounded-xl border px-3 py-3 text-center transition-all active:scale-95 ${
               active
                 ? "border-accent-500 bg-accent-500/10 text-accent-600 dark:text-accent-400"
                 : "border-cream-300 bg-cream-50/60 text-ink-700 hover:border-accent-400/60 dark:border-ink-700 dark:bg-ink-900/50 dark:text-cream-100/80"
@@ -82,8 +83,18 @@ function Section({
 }
 
 export function SettingsView() {
-  const { locale, font, accent, setLocale, setFont, setAccent, reset, t } =
-    useSettings();
+  const {
+    locale,
+    font,
+    accent,
+    fontSize,
+    setLocale,
+    setFont,
+    setAccent,
+    setFontSize,
+    reset,
+    t,
+  } = useSettings();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [resetDone, setResetDone] = useState(false);
@@ -117,6 +128,26 @@ export function SettingsView() {
         />
       </Section>
 
+      <Section title={t("settingsFontSize")} hint={t("settingsFontSizeHint")}>
+        <Segmented<FontSize>
+          options={[
+            { value: "normal", label: t("settingsFontSizeNormal") },
+            { value: "large", label: t("settingsFontSizeLarge") },
+            { value: "xlarge", label: t("settingsFontSizeXLarge") },
+          ]}
+          value={fontSize}
+          onChange={setFontSize}
+        />
+        <p
+          className="mt-3 rounded-xl border border-cream-200 bg-cream-50/60 px-4 py-3 text-ink-700 dark:border-ink-800 dark:bg-ink-900/40 dark:text-cream-100/80"
+          aria-hidden
+        >
+          {locale === "en"
+            ? "The quick brown fox"
+            : "بالهنا والشفا على مطبخ الجدة"}
+        </p>
+      </Section>
+
       <Section title={t("settingsAccent")} hint={t("settingsAccentHint")}>
         <div className="grid grid-cols-3 gap-2">
           {(Object.keys(ACCENT_SWATCH) as Accent[]).map((a) => {
@@ -126,7 +157,7 @@ export function SettingsView() {
                 key={a}
                 type="button"
                 onClick={() => setAccent(a)}
-                className={`flex items-center gap-2 rounded-xl border px-3 py-3 transition ${
+                className={`flex min-h-12 items-center gap-2 rounded-xl border px-3 py-3 transition-all active:scale-95 ${
                   active
                     ? "border-accent-500 bg-accent-500/10"
                     : "border-cream-300 bg-cream-50/60 hover:border-accent-400/60 dark:border-ink-700 dark:bg-ink-900/50"

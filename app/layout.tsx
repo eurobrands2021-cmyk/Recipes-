@@ -6,6 +6,7 @@ import { SettingsProvider, settingsNoFlashScript } from "@/components/settings-p
 import { FavoritesProvider } from "@/components/favorites-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { siteUrl, SITE_NAME_AR } from "@/lib/site";
 
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
@@ -28,17 +29,28 @@ const inter = Inter({
   display: "swap",
 });
 
+const DESCRIPTION =
+  "أرشيف رقمي لوصفات الجدة المكتوبة بخط يدها — صدقة جارية لها، يتصفحها ويطبخ منها أفراد العائلة.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "مطبخ الجدة — صدقة جارية",
     template: "%s · مطبخ الجدة",
   },
-  description:
-    "أرشيف رقمي لوصفات الجدة المكتوبة بخط يدها — صدقة جارية لها، يتصفحها ويطبخ منها أفراد العائلة.",
+  description: DESCRIPTION,
+  applicationName: SITE_NAME_AR,
   openGraph: {
     title: "مطبخ الجدة — صدقة جارية",
     description: "أرشيف رقمي لوصفات الجدة المكتوبة بخط يدها — صدقة جارية لها.",
+    siteName: SITE_NAME_AR,
+    locale: "ar_EG",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "مطبخ الجدة — صدقة جارية",
+    description: "أرشيف رقمي لوصفات الجدة المكتوبة بخط يدها — صدقة جارية لها.",
   },
 };
 
@@ -55,14 +67,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning>
+    <html
+      lang="ar"
+      dir="rtl"
+      // The next/font variables (--font-tajawal / --font-cairo / --font-inter)
+      // must live on the same element where globals.css declares --font-app /
+      // --font-display (:root === <html>), otherwise those var() references
+      // resolve against an undefined value and the whole font-family is dropped.
+      className={`${tajawal.variable} ${cairo.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        {/* Set locale/dir/font/accent before paint to avoid a flash. */}
+        {/* Set locale/dir/font/accent/size before paint to avoid a flash. */}
         <script dangerouslySetInnerHTML={{ __html: settingsNoFlashScript }} />
       </head>
-      <body
-        className={`${tajawal.variable} ${cairo.variable} ${inter.variable} font-sans`}
-      >
+      <body className="font-sans">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SettingsProvider>
             <FavoritesProvider>

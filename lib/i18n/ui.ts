@@ -52,6 +52,11 @@ export type UIKey =
   | "settingsLanguageHint"
   | "settingsFont"
   | "settingsFontHint"
+  | "settingsFontSize"
+  | "settingsFontSizeHint"
+  | "settingsFontSizeNormal"
+  | "settingsFontSizeLarge"
+  | "settingsFontSizeXLarge"
   | "settingsAccent"
   | "settingsAccentHint"
   | "settingsTheme"
@@ -65,7 +70,12 @@ export type UIKey =
   | "sourceFriend"
   | "notFoundTitle"
   | "notFoundBody"
-  | "notFoundBack";
+  | "notFoundBack"
+  | "notFoundHome"
+  | "navAbout"
+  | "aboutTitle"
+  | "aboutBody"
+  | "aboutHeritage";
 
 type Dict = Record<UIKey, string>;
 
@@ -121,6 +131,11 @@ const en: Dict = {
     "Applies to the whole app and recipe content. Saved on this device.",
   settingsFont: "Arabic font",
   settingsFontHint: "Choose the typeface for Arabic text.",
+  settingsFontSize: "Text size",
+  settingsFontSizeHint: "Make everything bigger and easier to read.",
+  settingsFontSizeNormal: "Normal",
+  settingsFontSizeLarge: "Large",
+  settingsFontSizeXLarge: "Extra large",
   settingsAccent: "Accent color",
   settingsAccentHint: "A single warm accent across the app.",
   settingsTheme: "Theme",
@@ -132,9 +147,17 @@ const en: Dict = {
   sourceWritten: "In Teta's hand",
   sourceInferred: "Reconstructed",
   sourceFriend: "From a friend/relative",
-  notFoundTitle: "We couldn't find this page",
-  notFoundBody: "The recipe may not exist or has moved to another category.",
+  notFoundTitle: "This page isn't here",
+  notFoundBody:
+    "The recipe may have moved to another spot — let's head back to the kitchen.",
   notFoundBack: "Back to Teta's Kitchen",
+  notFoundHome: "Browse the recipes",
+  navAbout: "About",
+  aboutTitle: "About Teta's Kitchen",
+  aboutBody:
+    "This is Teta's handwritten recipe notebook, kept online for the whole family — to browse, cook from, and remember her with a kind prayer. May every dish cooked from it be an ongoing charity in her name.",
+  aboutHeritage:
+    "Every recipe here was written or noted in her own hand. Some methods were gently reconstructed where a step was only implied; those are marked so nothing is mistaken for her exact words.",
 };
 
 const arFormal: Dict = {
@@ -189,6 +212,11 @@ const arFormal: Dict = {
     "تُطبّق على كامل التطبيق ومحتوى الوصفات. محفوظة على هذا الجهاز.",
   settingsFont: "خط اللغة العربية",
   settingsFontHint: "اختر شكل الخط للنصوص العربية.",
+  settingsFontSize: "حجم الخط",
+  settingsFontSizeHint: "كبّر حجم النص ليصبح أوضح وأسهل في القراءة.",
+  settingsFontSizeNormal: "عادي",
+  settingsFontSizeLarge: "كبير",
+  settingsFontSizeXLarge: "كبير جداً",
   settingsAccent: "اللون المميّز",
   settingsAccentHint: "لون دافئ واحد يميّز التطبيق.",
   settingsTheme: "المظهر",
@@ -200,9 +228,16 @@ const arFormal: Dict = {
   sourceWritten: "بخط الجدة",
   sourceInferred: "مستنبطة",
   sourceFriend: "من صحاب الجدة",
-  notFoundTitle: "لم نعثر على هذه الصفحة",
-  notFoundBody: "قد تكون الوصفة غير موجودة أو انتقلت إلى قسم آخر.",
+  notFoundTitle: "هذه الصفحة غير موجودة",
+  notFoundBody: "قد تكون الوصفة قد انتقلت إلى مكان آخر — لنَعُد إلى المطبخ.",
   notFoundBack: "العودة إلى مطبخ الجدة",
+  notFoundHome: "تصفّح الوصفات",
+  navAbout: "عن المطبخ",
+  aboutTitle: "عن مطبخ الجدة",
+  aboutBody:
+    "هذا دفتر وصفات الجدة المكتوب بخط يدها، محفوظاً على الإنترنت لكل أفراد العائلة — نتصفحه، ونطبخ منه، ونذكرها بدعوة خير. اللهم اجعل كل طبق يُطبخ منه صدقة جارية باسمها.",
+  aboutHeritage:
+    "كل وصفة هنا كُتبت أو دُوّنت بخط يدها. بعض الطرق أُعيد بناؤها بلطف حين كانت الخطوة مُلمّحاً إليها فقط، وهذه مُعلَّمة حتى لا يختلط شيء بكلامها الأصلي.",
 };
 
 const arEG: Dict = {
@@ -220,10 +255,23 @@ const arEG: Dict = {
   settingsLanguageHint:
     "بتتطبّق على التطبيق كله وعلى الوصفات. متسجّلة على الجهاز ده.",
   settingsFontHint: "اختار شكل الخط للكلام العربي.",
+  settingsFontSize: "حجم الخط",
+  settingsFontSizeHint: "كبّر حجم الكلام عشان يبقى أوضح وأسهل في القراية.",
+  settingsFontSizeNormal: "عادي",
+  settingsFontSizeLarge: "كبير",
+  settingsFontSizeXLarge: "كبير قوي",
   settingsAccentHint: "لون دافي واحد يميّز التطبيق.",
   settingsTheme: "الشكل",
-  notFoundBody: "يمكن الوصفة مش موجودة أو اتنقلت لقسم تاني.",
+  notFoundTitle: "الصفحة دي مش موجودة",
+  notFoundBody: "يمكن الوصفة اتنقلت مكان… تعالى نرجع للمطبخ تاني.",
   notFoundBack: "ارجع لمطبخ الجدة",
+  notFoundHome: "اتفرج على الوصفات",
+  navAbout: "عن المطبخ",
+  aboutTitle: "عن مطبخ الجدة",
+  aboutBody:
+    "ده دفتر وصفات الجدة اللي كاتباه بخط إيدها، متحفوظ على النت لكل العيلة — نتفرج عليه، ونطبخ منه، ونفتكرها بدعوة حلوة. اللهم اجعل كل طبق يتطبخ منه صدقة جارية باسمها.",
+  aboutHeritage:
+    "كل وصفة هنا اتكتبت أو اتدوّنت بخط إيدها. بعض الطرق اترتّبت بلطف لما الخطوة كانت مفهومة ضمنياً بس، ودي متعلّمة عشان محدش يخلط بينها وبين كلامها بالظبط.",
 };
 
 export const UI: Record<Locale, Dict> = {
