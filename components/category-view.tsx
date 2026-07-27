@@ -16,7 +16,7 @@ export function CategoryView({ category }: { category: Category }) {
     <div className="space-y-6 pt-2">
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-sm text-ink-700/60 transition hover:text-accent-600 dark:text-cream-100/50 dark:hover:text-accent-400"
+        className="inline-flex min-h-11 items-center gap-1.5 text-sm text-ink-700/60 transition hover:text-accent-600 dark:text-cream-100/50 dark:hover:text-accent-400"
       >
         <svg viewBox="0 0 24 24" className="h-4 w-4 rtl:-scale-x-100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
           <path d="M15 18l-6-6 6-6" />

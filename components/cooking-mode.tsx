@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { CookingTimer } from "./cooking-timer";
 import { useSettings } from "./settings-provider";
 import { parseDurationSeconds, servingChecks } from "@/lib/cooking";
@@ -46,6 +47,10 @@ export function CookingMode({
   const { locale, t } = useSettings();
   const lsKey = `teta.cooking.${recipeId}`;
   const [state, setState] = useState<CookingState>(emptyState);
+  // Render into <body> so the full-screen overlay escapes the page's stacking
+  // context and reliably covers the sticky site header while cooking.
+  const [portalReady, setPortalReady] = useState(false);
+  useEffect(() => setPortalReady(true), []);
 
   const serving = useMemo(
     () => servingChecks(steps, notes, locale),
@@ -119,8 +124,10 @@ export function CookingMode({
   const current = Math.min(state.stepIndex, total - 1);
   const stepDuration = parseDurationSeconds(steps[current] ?? "");
 
-  return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-cream-50 dark:bg-ink-950">
+  if (!portalReady) return null;
+
+  return createPortal(
+    <div className="fixed inset-0 z-[100] flex flex-col bg-cream-50 dark:bg-ink-950">
       {/* Top bar */}
       <div className="flex items-center gap-3 border-b border-cream-200 px-4 py-3 dark:border-ink-800">
         <h2 className="min-w-0 flex-1 truncate font-display text-lg font-bold text-ink-800 dark:text-cream-100">
@@ -341,6 +348,7 @@ export function CookingMode({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

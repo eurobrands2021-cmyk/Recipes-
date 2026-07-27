@@ -126,7 +126,7 @@ export function RecipeDetail({
                     type="button"
                     onClick={() => setScale(o.value)}
                     aria-pressed={active}
-                    className={`min-h-9 min-w-11 rounded-full px-3 text-sm font-semibold transition-all active:scale-95 ${
+                    className={`min-h-11 min-w-11 rounded-full px-3 text-sm font-semibold transition-all active:scale-95 ${
                       active
                         ? "bg-accent-500 text-white"
                         : "text-ink-700/70 hover:text-accent-600 dark:text-cream-100/60 dark:hover:text-accent-400"

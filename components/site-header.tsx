@@ -19,21 +19,21 @@ export function SiteHeader() {
       <div className="mx-auto flex w-full max-w-3xl items-center justify-between gap-2 px-4 py-3 sm:px-6">
         <Link
           href="/"
-          className="group inline-flex items-center gap-2.5"
+          className="group inline-flex min-h-11 min-w-0 items-center gap-2.5"
           aria-label={t("navHome")}
         >
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-accent-500/15 text-accent-600 dark:text-accent-400">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-accent-500/15 text-accent-600 dark:text-accent-400">
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M7 3v6M17 3v6M12 3v6M5 9h14a0 0 0 0 1 0 0v2a7 7 0 0 1-14 0V9z" />
               <path d="M5 21h14" />
             </svg>
           </span>
-          <span className="font-display text-lg font-bold tracking-tight text-ink-800 group-hover:text-accent-600 dark:text-cream-100 dark:group-hover:text-accent-400">
+          <span className="min-w-0 break-words font-display text-lg font-bold leading-tight tracking-tight text-ink-800 group-hover:text-accent-600 dark:text-cream-100 dark:group-hover:text-accent-400">
             {t("appName")}
           </span>
         </Link>
 
-        <nav className="flex items-center gap-1.5">
+        <nav className="flex shrink-0 items-center gap-1.5">
           <SurpriseButton variant="icon" />
           <Link
             href="/favorites"

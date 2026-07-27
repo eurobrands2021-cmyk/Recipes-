@@ -17,8 +17,8 @@ export function FavoriteButton({
   const fav = ready && isFavorite(id);
 
   const box =
-    size === "lg" ? "h-11 w-11" : size === "sm" ? "h-8 w-8" : "h-10 w-10";
-  const icon = size === "lg" ? "h-6 w-6" : size === "sm" ? "h-4 w-4" : "h-5 w-5";
+    size === "lg" ? "h-11 w-11" : size === "sm" ? "h-10 w-10" : "h-10 w-10";
+  const icon = size === "lg" ? "h-6 w-6" : size === "sm" ? "h-5 w-5" : "h-5 w-5";
 
   return (
     <button
