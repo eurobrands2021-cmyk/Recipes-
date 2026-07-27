@@ -58,7 +58,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "boftek-grilled-meat": {
-    title: "Grilled Meat / Boftek",
+    title: "Boftek",
     ingredients: [
       "A tender cut of meat (boftek slices from the butcher)",
       "Marinade: yogurt + crushed tomato + seasoning (salt and pepper)",
@@ -126,7 +126,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "chocolate-biscuit-sauce": {
-    title: "Chocolate & Biscuit Filling",
+    title: "Chocolate & Biscuit",
     ingredients: [
       "1 packet biscuits",
       "1 cup milk",
@@ -245,7 +245,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "dukkah-spice-blend": {
-    title: "Homemade Dukkah & Spice Blend",
+    title: "Dukkah",
     ingredients: [
       "50 g roasted peanuts",
       "50 g cumin",
@@ -262,7 +262,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "ammonia-biscuits": {
-    title: "Ammonia Biscuits",
+    title: "Everyday Biscuits",
     ingredients: [
       "2–3 cups plain flour",
       "1 sachet baking powder",
@@ -279,7 +279,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "decorating-cream-sauce": {
-    title: "Decorating Cream / Sauce",
+    title: "Decorating Cream",
     ingredients: [
       "1 cup milk",
       "1 egg",
@@ -296,7 +296,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "homemade-soap": {
-    title: "Homemade Laundry / Kitchen Soap",
+    title: "Homemade Soap",
     notes:
       "Be careful with the caustic soda: dissolve it in cold water in a glass or plastic container only, and avoid metal ones.",
     ingredients: [
@@ -355,7 +355,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "soft-ghorayeba-coconut": {
-    title: "Soft Ghorayeba with Egg & Coconut",
+    title: "Ghorayeba with Coconut",
     ingredients: [
       "4 cups sifted flour",
       "1 cup powdered sugar",
@@ -389,7 +389,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "araqish-agwa": {
-    title: "Qaraqish / Date Biscuit Fingers",
+    title: "Date Qaraqish",
     ingredients: [
       "Flour + ghee",
       "1 cup milk",
@@ -405,7 +405,7 @@ export const enPart1: OverrideMap = {
     ],
   },
   "petit-four-sesame-agwa": {
-    title: "Soft Syrian Petit Four with Dates & Coconut",
+    title: "Syrian Petit Four",
     reviewNote:
       "Two versions of the same recipe (pages 25 & 26) were merged. The page-26 version was kept because it gives the flour (1 cup) and ghee (½ cup) precisely and adds a fourth step, rather than keeping two near-identical entries.",
     ingredients: [

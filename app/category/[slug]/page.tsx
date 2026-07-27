@@ -22,14 +22,14 @@ export function generateMetadata({
     description,
     alternates: { canonical: `/category/${category.slug}` },
     openGraph: {
-      title: `${category.nameAr} · وصفة تيتا`,
+      title: `${category.nameAr} · وصفة تيتا زينب`,
       description,
       type: "website",
       url: `/category/${category.slug}`,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category.nameAr} · وصفة تيتا`,
+      title: `${category.nameAr} · وصفة تيتا زينب`,
       description,
     },
   };

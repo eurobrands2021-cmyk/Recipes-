@@ -40,7 +40,7 @@ export const enPart2: OverrideMap = {
     ],
   },
   "ammonia-biscuits-2": {
-    title: "Ammonia Biscuits (Milk Dough)",
+    title: "Ammonia Biscuits",
     ingredients: [
       "1 cup flour (or a little more)",
       "½ cup sugar",
@@ -160,7 +160,7 @@ export const enPart2: OverrideMap = {
     ],
   },
   "red-chili-harissa": {
-    title: "Hot Red Pepper Harissa",
+    title: "Red Pepper Harissa",
     notes: "Do not add vinegar or lemon.",
     reviewNote:
       "Vinegar/lemon were removed from the ingredients — the method explicitly says not to add them, and they were listed by mistake in the original.",
@@ -228,7 +228,7 @@ export const enPart2: OverrideMap = {
     ],
   },
   "rice-mahalabia-cream": {
-    title: "Rice Mahalabia with Cream",
+    title: "Rice Mahalabia",
     ingredients: [
       "Boiled rice",
       "2 cups water",
@@ -243,7 +243,7 @@ export const enPart2: OverrideMap = {
     ],
   },
   "butter-sable-biscuits": {
-    title: "Soft Butter Sablé Biscuits",
+    title: "Sablé Biscuits",
     ingredients: [
       "2 cups flour",
       "¾ cup firm butter",
@@ -279,7 +279,7 @@ export const enPart2: OverrideMap = {
     ],
   },
   "falafel-taameya": {
-    title: "Falafel / Taameya (Chickpea)",
+    title: "Taameya (Falafel)",
     ingredients: [
       "Soaked and boiled skinless chickpeas",
       "Onion + garlic + leek + mixed greens (coriander and parsley)",
@@ -313,7 +313,7 @@ export const enPart2: OverrideMap = {
     ],
   },
   "cream-mahalabia": {
-    title: "Smooth Mahalabia with Cream",
+    title: "Mahalabia with Cream",
     ingredients: [
       "2 cups milk",
       "2 tbsp cornstarch",
@@ -328,7 +328,7 @@ export const enPart2: OverrideMap = {
     ],
   },
   "crispy-fried-chicken": {
-    title: "Homemade Crispy Fried Chicken",
+    title: "Crispy Fried Chicken",
     reviewNote:
       "Milk was added to the ingredients and actually used in the method (a double dip before the flour coating) instead of relying only on iced water — it was listed in the original ingredients without being used in any step.",
     ingredients: [

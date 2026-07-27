@@ -84,12 +84,12 @@ export type UIKey =
 type Dict = Record<UIKey, string>;
 
 const en: Dict = {
-  appName: "Teta's Recipe",
+  appName: "Teta Zeinab's Recipe",
   dedicationKicker: "The food that keeps us together",
-  dedicationTitle: "Teta's Recipe",
+  dedicationTitle: "Teta Zeinab's Recipe",
   dedicationSub:
-    "A little notebook that always sat on my grandmother's kitchen shelf, holding every dish she used to make for us. We don't ask much of this site — just that the food which brings our family together stays with us, that we can come back to it whenever we like, and cook it exactly the way she did. May God have mercy on her and grant her peace.",
-  footerLine: "Teta's Recipe — the family's kitchen notebook",
+    "A little notebook that always sat on my grandmother Zeinab's kitchen shelf, holding every dish she used to make for us. We don't ask much of this site — just that the food which brings our family together stays with us, that we can come back to it whenever we like, and cook it exactly the way she did. May God have mercy on her and grant her peace.",
+  footerLine: "Teta Zeinab's Recipe — the family's kitchen notebook",
   footerSub: "In her loving memory",
   sectionCategories: "Categories",
   countRecipes: "recipes",
@@ -154,11 +154,11 @@ const en: Dict = {
   notFoundTitle: "This page isn't here",
   notFoundBody:
     "The recipe may have moved to another spot — let's head back to the kitchen.",
-  notFoundBack: "Back to Teta's Recipe",
+  notFoundBack: "Back to Teta Zeinab's Recipe",
   notFoundHome: "Browse the recipes",
   navAbout: "About",
   navSurprise: "Surprise me",
-  aboutTitle: "About Teta's Recipe",
+  aboutTitle: "About Teta Zeinab's Recipe",
   ratingTitle: "Rating",
   ratingYours: "Your rating",
   ratingClear: "Clear",
@@ -167,12 +167,12 @@ const en: Dict = {
 };
 
 const arFormal: Dict = {
-  appName: "وصفة تيتا",
+  appName: "وصفة تيتا زينب",
   dedicationKicker: "أكل العيلة",
-  dedicationTitle: "وصفة تيتا",
+  dedicationTitle: "وصفة تيتا زينب",
   dedicationSub:
-    "دفترٌ صغير، كان دائماً على رفّ مطبخ جدتي، فيه كل الوصفات التي كانت تُعِدّها لنا. لا نطلب من هذا الموقع شيئاً كبيراً، فقط أن يبقى الطعام الذي يجمعنا كعائلة موجوداً، نعود إليه متى شئنا، ونطبخه تماماً كما كانت تصنعه. رحمها الله وأسكنها فسيح جناته.",
-  footerLine: "وصفة تيتا — دفتر أكل العيلة",
+    "دفترٌ صغير، كان دائماً على رفّ مطبخ جدتي زينب، فيه كل الوصفات التي كانت تُعِدّها لنا. لا نطلب من هذا الموقع شيئاً كبيراً، فقط أن يبقى الطعام الذي يجمعنا كعائلة موجوداً، نعود إليه متى شئنا، ونطبخه تماماً كما كانت تصنعه. رحمها الله وأسكنها فسيح جناته.",
+  footerLine: "وصفة تيتا زينب — دفتر أكل العيلة",
   footerSub: "الله يرحمها",
   sectionCategories: "الأقسام",
   countRecipes: "وصفة",
@@ -236,11 +236,11 @@ const arFormal: Dict = {
   sourceFriend: "من صحاب الجدة",
   notFoundTitle: "هذه الصفحة غير موجودة",
   notFoundBody: "قد تكون الوصفة قد انتقلت إلى مكان آخر — لنَعُد إلى المطبخ.",
-  notFoundBack: "العودة إلى وصفة تيتا",
+  notFoundBack: "العودة إلى وصفة تيتا زينب",
   notFoundHome: "تصفّح الوصفات",
   navAbout: "عن الموقع",
   navSurprise: "فاجئني",
-  aboutTitle: "عن وصفة تيتا",
+  aboutTitle: "عن وصفة تيتا زينب",
   ratingTitle: "التقييم",
   ratingYours: "تقييمك",
   ratingClear: "مسح",
@@ -251,7 +251,7 @@ const arFormal: Dict = {
 const arEG: Dict = {
   ...arFormal,
   dedicationSub:
-    "دفتر صغير، كان دايماً على رف مطبخ جدتي، فيه كل الوصفات الي كانت بتعملهلنا. مش عايزين حاجة كبيرة من الموقع ده، بس عايزين إن الأكل اللي بيجمعنا كعيلة يفضل موجود، ونقدر نرجعله وقت ما حبينا، ونطبخه بالظبط زي ما كانت بتعمله. الله يرحمها ويسكنها فسيح جناته.",
+    "دفتر صغير، كان دايماً على رف مطبخ جدتي زينب، فيه كل الوصفات الي كانت بتعملهلنا. مش عايزين حاجة كبيرة من الموقع ده، بس عايزين إن الأكل اللي بيجمعنا كعيلة يفضل موجود، ونقدر نرجعله وقت ما حبينا، ونطبخه بالظبط زي ما كانت بتعمله. الله يرحمها ويسكنها فسيح جناته.",
   searchPlaceholder: "دوّر على وصفة أو مكوّن...",
   searchNone: "مفيش وصفة بتطابق اللي بتدوّر عليه.",
   recipeTetaNotes: "نصايح الجدة",
@@ -272,10 +272,10 @@ const arEG: Dict = {
   settingsTheme: "الشكل",
   notFoundTitle: "الصفحة دي مش موجودة",
   notFoundBody: "يمكن الوصفة اتنقلت مكان… تعالى نرجع تاني.",
-  notFoundBack: "ارجع لوصفة تيتا",
+  notFoundBack: "ارجع لوصفة تيتا زينب",
   notFoundHome: "اتفرج على الوصفات",
   navAbout: "عن الموقع",
-  aboutTitle: "عن وصفة تيتا",
+  aboutTitle: "عن وصفة تيتا زينب",
   scaleHint: "زوّد أو قلّل المقادير حسب اللي بتطبخه.",
 };
 

@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "عن وصفة تيتا",
+    title: "عن وصفة تيتا زينب",
     description,
     type: "website",
     url: "/about",
   },
   twitter: {
     card: "summary_large_image",
-    title: "عن وصفة تيتا",
+    title: "عن وصفة تيتا زينب",
     description,
   },
 };

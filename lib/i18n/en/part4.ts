@@ -3,7 +3,7 @@ import type { OverrideMap } from "../../types";
 // English overrides — recipes 76–99.
 export const enPart4: OverrideMap = {
   "heavy-dessert-syrup": {
-    title: "Heavy Dessert Syrup (for Kunafa & Qatayef)",
+    title: "Dessert Syrup (Sharbat)",
     ingredients: [
       "2 cups sugar",
       "1 cup water",
@@ -47,7 +47,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "crispy-bread-snacks": {
-    title: "Crispy Bread Snacks",
+    title: "Crispy Bread",
     ingredients: [
       "2 cups flour",
       "1 cup yogurt",
@@ -61,7 +61,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "garlic-mayo-sauce": {
-    title: "Homemade Garlic Mayo (Toumeya)",
+    title: "Garlic Sauce (Toumeya)",
     ingredients: [
       "4 garlic cloves",
       "1 egg (or egg white)",
@@ -76,7 +76,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "quick-crispy-fries": {
-    title: "Quick Crispy Fried Potatoes",
+    title: "Crispy Fried Potatoes",
     ingredients: [
       "Potato fingers",
       "Water for a quick boil",
@@ -143,7 +143,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "red-rice-nuts-cinnamon": {
-    title: "Red Rice with Nuts & Cinnamon",
+    title: "Red Rice with Nuts",
     reviewNote:
       "Water and salt were added to the ingredients — they were used in the method but weren't in the original list.",
     ingredients: [
@@ -163,7 +163,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "chicken-shawarma-peppers-rice": {
-    title: "Chicken Shawarma with Peppers & Rice",
+    title: "Chicken Shawarma",
     ingredients: [
       "Chicken breast or thigh, sliced",
       "Yogurt + minced onion + chicken spices",
@@ -243,7 +243,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "chicken-pane": {
-    title: "Homemade Crispy Chicken Pané",
+    title: "Chicken Pané",
     reviewNote:
       "Milk was in the ingredients without being used in the method — it was added as a soaking/tenderizing step for the chicken before the marinade, a common way to tenderize chicken before seasoning and frying.",
     ingredients: [
@@ -261,7 +261,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "loqmet-el-qadi": {
-    title: "Loqmet el-Qadi (Golden Zalabya)",
+    title: "Loqmet el-Qadi",
     ingredients: [
       "2 cups flour",
       "1 tbsp instant yeast + 1 tbsp sugar",
@@ -275,7 +275,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "potato-egg-eggah": {
-    title: "Potato Eggah with Egg & Mince",
+    title: "Potato Eggah",
     ingredients: [
       "Boiled and mashed potatoes",
       "4 eggs",
@@ -318,7 +318,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "egyptian-rice-kofta": {
-    title: "Authentic Egyptian Rice Kofta",
+    title: "Rice Kofta",
     reviewNote: "A supplementary recipe with no specific page number in the original.",
     ingredients: [
       "½ kilo minced camel or beef",
@@ -334,7 +334,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "wheat-belila": {
-    title: "Wheat Belila with Milk & Nuts",
+    title: "Wheat Belila",
     reviewNote: "A supplementary recipe with no specific page number in the original.",
     ingredients: [
       "1 cup belila wheat (washed and soaked)",
@@ -350,7 +350,7 @@ export const enPart4: OverrideMap = {
     ],
   },
   "yellow-lentil-soup": {
-    title: "Yellow Lentil Soup with Baladi Ghee",
+    title: "Yellow Lentil Soup",
     reviewNote: "A supplementary recipe with no specific page number in the original.",
     ingredients: [
       "1 cup washed yellow lentils",

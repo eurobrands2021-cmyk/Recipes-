@@ -108,7 +108,7 @@ export const enPart3: OverrideMap = {
     ],
   },
   "veg-flamenk-cheese-tray": {
-    title: "Baked Vegetable & Flamenk Cheese Tray",
+    title: "Vegetable & Cheese Tray",
     ingredients: [
       "Minced garlic and onion",
       "Chopped bell pepper + grated carrot",
@@ -320,7 +320,7 @@ export const enPart3: OverrideMap = {
     ],
   },
   "baked-rice-milk-samna": {
-    title: "Baked Savory Rice with Baladi Ghee",
+    title: "Roz Moammar (Baked Rice)",
     ingredients: [
       "2 cups washed Egyptian rice",
       "3 cups warm milk",
@@ -336,7 +336,7 @@ export const enPart3: OverrideMap = {
     ],
   },
   "homemade-foul-medames": {
-    title: "Homemade Foul Medames",
+    title: "Foul Medames",
     ingredients: [
       "½ kilo foul (fava) beans (soaked overnight)",
       "2 tbsp yellow lentils",
@@ -379,7 +379,7 @@ export const enPart3: OverrideMap = {
     ],
   },
   "baba-ganoush": {
-    title: "Grilled Baba Ganoush",
+    title: "Baba Ganoush",
     ingredients: [
       "1 large eggplant, grilled",
       "2 tbsp tahini",

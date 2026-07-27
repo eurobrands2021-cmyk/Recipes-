@@ -181,7 +181,7 @@ export function renderOgImage({
                 lineHeight: 1.1,
               }}
             >
-              وصفة تيتا
+              وصفة تيتا زينب
             </div>
             <div style={{ fontSize: 24, color: tint, marginTop: 4 }}>
               {eyebrow}

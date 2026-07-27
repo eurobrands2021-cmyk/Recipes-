@@ -36,8 +36,8 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "وصفة تيتا — دفتر أكل العيلة",
-    template: "%s · وصفة تيتا",
+    default: "وصفة تيتا زينب — دفتر أكل العيلة",
+    template: "%s · وصفة تيتا زينب",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME_AR,
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
   },
   openGraph: {
-    title: "وصفة تيتا — دفتر أكل العيلة",
+    title: "وصفة تيتا زينب — دفتر أكل العيلة",
     description: DESCRIPTION,
     siteName: SITE_NAME_AR,
     locale: "ar_EG",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "وصفة تيتا — دفتر أكل العيلة",
+    title: "وصفة تيتا زينب — دفتر أكل العيلة",
     description: DESCRIPTION,
   },
 };

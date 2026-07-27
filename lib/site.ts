@@ -13,4 +13,4 @@ export const siteUrl: string = (() => {
   return "http://localhost:3000";
 })();
 
-export const SITE_NAME_AR = "وصفة تيتا";
+export const SITE_NAME_AR = "وصفة تيتا زينب";
