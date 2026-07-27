@@ -22,7 +22,7 @@ export const enPart1: OverrideMap = {
       "Dust with a little flour if needed, divide the dough into 4 pieces, stack them and rest in the fridge for over half an hour.",
       "Roll out the dough and spread it with cinnamon and jam, or fine sugar with cinnamon.",
       "Shape, cut, arrange on a tray, and brush with the milk-and-yolk glaze.",
-      "Leave to rise again for 10 to 30 minutes, then bake until golden.",
+      "Leave to rise again for 10 to 30 minutes, then bake in a medium oven (about 180°C / 350°F) for 20–25 minutes until golden.",
     ],
   },
   "goulash-cheese": {
@@ -184,7 +184,7 @@ export const enPart1: OverrideMap = {
     steps: [
       "Beat the eggs and vanilla with the sugar well until pale.",
       "Add the dry ingredients (flour, baking powder, cocoa) and fold the mix together.",
-      "Add the ½ cup boiling water at the end, stir the batter quickly, then pour into a greased tray and bake.",
+      "Add the ½ cup boiling water at the end, stir the batter quickly, then pour into a greased tray and bake in a preheated medium oven (about 180°C / 350°F) for 30–35 minutes, until risen and a toothpick comes out clean.",
     ],
   },
   "creme-caramel": {
@@ -385,7 +385,7 @@ export const enPart1: OverrideMap = {
       "Put the sifted flour with a pinch of salt in a bowl, pour over the warm ghee, and rub it through the flour until fully absorbed.",
       "Dissolve the fresh yeast with the tablespoon of sugar in a little warm water and leave it to activate.",
       "Add the yeast to the flour and knead, adding the warm water very carefully and in small amounts so the kaak doesn't dry out.",
-      "Shape the kaak, mark it with a kaak tongs, arrange on trays, leave to rise a little, then bake in a medium oven and dust with powdered sugar once cooled.",
+      "Shape the kaak, mark it with a kaak tongs, arrange on trays, leave to rise a little, then bake in a medium oven (about 170°C / 340°F) for roughly 20 minutes until set without browning much, and dust with powdered sugar once cooled.",
     ],
   },
   "araqish-agwa": {

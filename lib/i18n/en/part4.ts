@@ -104,7 +104,7 @@ export const enPart4: OverrideMap = {
       "Pour the ghee over the flour right after it boils, stir with a wooden spoon until the mix cools, then rub in well by hand.",
       "Dissolve the yeast and sugar in the cup of warm water and add over the mix once it has warmed, then bring the dough together.",
       "Leave the dough to rest for a quarter of an hour.",
-      "Shape the kaak into balls, mark them, and bake in a medium oven.",
+      "Shape the kaak into balls, mark them, and bake in a medium oven (about 170°C / 340°F) for roughly 20 minutes until set without browning much.",
     ],
   },
   "homemade-luncheon": {
@@ -198,7 +198,7 @@ export const enPart4: OverrideMap = {
     ingredients: ["Flour", "Milk", "Ghee"],
     steps: [
       "Knead the dough, roll it out, and beat it with a rolling pin or a straight bottle to smooth it.",
-      "Cut with cookie cutters, brush with milk and water, shape, and bake in the oven.",
+      "Cut with cookie cutters, brush with milk and water, shape, and bake in a medium oven (about 180°C / 350°F) for 12–15 minutes until lightly golden.",
     ],
   },
   "potato-mince-bechamel-tray": {

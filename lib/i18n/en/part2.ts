@@ -17,7 +17,7 @@ export const enPart2: OverrideMap = {
       "Put in the ghee and beat the eggs with the baking powder and sugar until doubled in volume.",
       "Add the orange juice and zest while continuing to beat.",
       "Add the flour and fold until the dough comes together.",
-      "Pipe through a biscuit press, shape, and bake in a medium oven until set.",
+      "Pipe through a biscuit press, shape, and bake in a medium oven (about 180°C / 350°F) for roughly 15 minutes until set and lightly golden.",
     ],
   },
   "fateer-mona": {
@@ -179,7 +179,7 @@ export const enPart2: OverrideMap = {
   "vanilla-biscuits": {
     title: "Vanilla Biscuits",
     reviewNote:
-      "The egg count was corrected to 4 (it was written ambiguously in the scan), and baking powder was added to the ingredients since it's used in the method but wasn't listed originally.",
+      "The egg count was corrected to 4 (it was written ambiguously in the scan), and baking powder was added to the ingredients since it's used in the method but wasn't listed originally. Oven temperature, time and a doneness cue were also added (INFERRED) because the bake step was very terse.",
     ingredients: [
       "6 cups flour",
       "1 cup powdered sugar",
@@ -190,7 +190,7 @@ export const enPart2: OverrideMap = {
     ],
     steps: [
       "Beat the ghee, sugar, eggs and vanilla.",
-      "Mix the flour and baking powder and add to the dough, then roll out, cut, and bake on trays.",
+      "Mix the flour and baking powder and add to the dough, then roll out, cut, and bake on trays in a medium oven (about 180°C / 350°F) for 12–15 minutes until lightly golden.",
     ],
   },
   "layered-feteer-meshaltet": {
