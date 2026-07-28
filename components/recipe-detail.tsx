@@ -5,9 +5,7 @@ import { useMemo, useState } from "react";
 import { CategoryIcon } from "./category-icon";
 import { CookingMode } from "./cooking-mode";
 import { FavoriteButton } from "./favorite-button";
-import { ReviewNote } from "./review-note";
 import { ShareButton } from "./share-button";
-import { SourceBadge } from "./source-badge";
 import { StarRating } from "./star-rating";
 import { useSettings } from "./settings-provider";
 import { categoryName } from "@/lib/localized";
@@ -71,7 +69,6 @@ export function RecipeDetail({
           <FavoriteButton id={bundle.id} size="lg" />
         </div>
         <div className="flex flex-wrap items-center gap-2.5">
-          <SourceBadge sourceType={bundle.sourceType} sourceNote={c.sourceNote} />
           {bundle.notebookPage != null && (
             <span className="inline-flex items-center gap-1.5 rounded-full bg-cream-200/70 px-2.5 py-1 text-xs text-ink-700/70 dark:bg-ink-800/70 dark:text-cream-100/60">
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -82,11 +79,6 @@ export function RecipeDetail({
             </span>
           )}
         </div>
-        {c.sourceNote && bundle.sourceType === "FRIEND_OR_RELATIVE" && (
-          <p className="text-sm text-ink-700/70 dark:text-cream-100/60">
-            {c.sourceNote}
-          </p>
-        )}
       </header>
 
       {/* Start Cooking */}
@@ -211,9 +203,6 @@ export function RecipeDetail({
           </p>
         </section>
       )}
-
-      {/* Review note */}
-      {c.reviewNote && <ReviewNote note={c.reviewNote} />}
 
       {/* Rating */}
       <StarRating id={bundle.id} />

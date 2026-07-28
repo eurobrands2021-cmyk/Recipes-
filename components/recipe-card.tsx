@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { CategoryIcon } from "./category-icon";
 import { FavoriteButton } from "./favorite-button";
-import { SourceBadge } from "./source-badge";
 import { StarsInline } from "./star-rating";
 import { useSettings } from "./settings-provider";
 import type { LocalizedCard } from "@/lib/localized";
@@ -11,9 +10,12 @@ import type { LocalizedCard } from "@/lib/localized";
 export function RecipeCard({
   card,
   categoryName,
+  note,
 }: {
   card: LocalizedCard;
   categoryName?: string;
+  /** Optional small line under the title (e.g. cooking-history summary). */
+  note?: string;
 }) {
   const { locale } = useSettings();
 
@@ -32,13 +34,14 @@ export function RecipeCard({
             {card.title[locale]}
           </h3>
           <div className="mt-2 flex flex-wrap items-center gap-2">
-            <SourceBadge
-              sourceType={card.sourceType}
-              sourceNote={card.sourceNote[locale]}
-            />
             {categoryName && (
               <span className="text-xs text-ink-700/60 dark:text-cream-100/50">
                 {categoryName}
+              </span>
+            )}
+            {note && (
+              <span className="text-xs font-medium text-accent-600 dark:text-accent-400">
+                {note}
               </span>
             )}
             {card.notebookPage != null && (

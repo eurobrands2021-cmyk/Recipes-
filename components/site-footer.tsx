@@ -20,6 +20,9 @@ export function SiteFooter() {
         >
           {t("navAbout")}
         </Link>
+        <p className="mt-4 border-t border-cream-200/60 pt-4 text-xs text-ink-700/55 dark:border-ink-800/60 dark:text-cream-100/45">
+          {t("footerDev")}
+        </p>
       </div>
     </footer>
   );

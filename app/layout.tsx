@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { SettingsProvider, settingsNoFlashScript } from "@/components/settings-provider";
 import { FavoritesProvider } from "@/components/favorites-provider";
 import { RatingsProvider } from "@/components/ratings-provider";
+import { HistoryProvider } from "@/components/history-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { siteUrl, SITE_NAME_AR } from "@/lib/site";
@@ -36,8 +37,8 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "وصفة تيتا زينب — دفتر أكل العيلة",
-    template: "%s · وصفة تيتا زينب",
+    default: "وصفات تيتا زينب — دفتر أكل العيلة",
+    template: "%s · وصفات تيتا زينب",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME_AR,
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
   },
   openGraph: {
-    title: "وصفة تيتا زينب — دفتر أكل العيلة",
+    title: "وصفات تيتا زينب — دفتر أكل العيلة",
     description: DESCRIPTION,
     siteName: SITE_NAME_AR,
     locale: "ar_EG",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "وصفة تيتا زينب — دفتر أكل العيلة",
+    title: "وصفات تيتا زينب — دفتر أكل العيلة",
     description: DESCRIPTION,
   },
 };
@@ -96,13 +97,15 @@ export default function RootLayout({
           <SettingsProvider>
             <FavoritesProvider>
               <RatingsProvider>
-              <div className="min-h-dvh bg-paper">
-                <SiteHeader />
-                <main className="mx-auto w-full max-w-3xl px-4 pb-24 pt-4 sm:px-6">
-                  {children}
-                </main>
-                <SiteFooter />
-              </div>
+                <HistoryProvider>
+                  <div className="min-h-dvh bg-paper">
+                    <SiteHeader />
+                    <main className="mx-auto w-full max-w-3xl px-4 pb-24 pt-4 sm:px-6">
+                      {children}
+                    </main>
+                    <SiteFooter />
+                  </div>
+                </HistoryProvider>
               </RatingsProvider>
             </FavoritesProvider>
           </SettingsProvider>

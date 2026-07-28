@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useSettings } from "./settings-provider";
-import { SourceBadge } from "./source-badge";
 import { cards, localizedCategories } from "@/lib/localized";
 import { normalizeArabic } from "@/lib/normalize";
 
@@ -75,10 +74,6 @@ export function Search() {
                           {c.notebookPage != null ? ` · ${c.notebookPage}` : ""}
                         </span>
                       </span>
-                      <SourceBadge
-                        sourceType={c.sourceType}
-                        sourceNote={c.sourceNote[locale]}
-                      />
                     </Link>
                   </li>
                 ))}

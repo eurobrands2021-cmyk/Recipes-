@@ -74,6 +74,13 @@ export type UIKey =
   | "notFoundHome"
   | "navAbout"
   | "navSurprise"
+  | "navHistory"
+  | "historyTitle"
+  | "historyEmpty"
+  | "historyOnce"
+  | "historyTimes"
+  | "historyLast"
+  | "footerDev"
   | "aboutTitle"
   | "ratingTitle"
   | "ratingYours"
@@ -84,12 +91,12 @@ export type UIKey =
 type Dict = Record<UIKey, string>;
 
 const en: Dict = {
-  appName: "Teta Zeinab's Recipe",
+  appName: "Teta Zeinab's Recipes",
   dedicationKicker: "The food that keeps us together",
-  dedicationTitle: "Teta Zeinab's Recipe",
+  dedicationTitle: "Teta Zeinab's Recipes",
   dedicationSub:
     "A little notebook that always sat on my grandmother Zeinab's kitchen shelf, holding every dish she used to make for us. We don't ask much of this site — just that the food which brings our family together stays with us, that we can come back to it whenever we like, and cook it exactly the way she did. May God have mercy on her and grant her peace.",
-  footerLine: "Teta Zeinab's Recipe — the family's kitchen notebook",
+  footerLine: "Teta Zeinab's Recipes — the family's kitchen notebook",
   footerSub: "In her loving memory",
   sectionCategories: "Categories",
   countRecipes: "recipes",
@@ -154,11 +161,18 @@ const en: Dict = {
   notFoundTitle: "This page isn't here",
   notFoundBody:
     "The recipe may have moved to another spot — let's head back to the kitchen.",
-  notFoundBack: "Back to Teta Zeinab's Recipe",
+  notFoundBack: "Back to Teta Zeinab's Recipes",
   notFoundHome: "Browse the recipes",
   navAbout: "About",
   navSurprise: "Surprise me",
-  aboutTitle: "About Teta Zeinab's Recipe",
+  navHistory: "Cooking history",
+  historyTitle: "Recipes you've cooked",
+  historyEmpty: "You haven't finished cooking any recipe yet.",
+  historyOnce: "cooked once",
+  historyTimes: "times",
+  historyLast: "last",
+  footerDev: "Developed by her grandson Ahmed Sameh",
+  aboutTitle: "About Teta Zeinab's Recipes",
   ratingTitle: "Rating",
   ratingYours: "Your rating",
   ratingClear: "Clear",
@@ -167,12 +181,12 @@ const en: Dict = {
 };
 
 const arFormal: Dict = {
-  appName: "وصفة تيتا زينب",
+  appName: "وصفات تيتا زينب",
   dedicationKicker: "أكل العيلة",
-  dedicationTitle: "وصفة تيتا زينب",
+  dedicationTitle: "وصفات تيتا زينب",
   dedicationSub:
     "دفترٌ صغير، كان دائماً على رفّ مطبخ جدتي زينب، فيه كل الوصفات التي كانت تُعِدّها لنا. لا نطلب من هذا الموقع شيئاً كبيراً، فقط أن يبقى الطعام الذي يجمعنا كعائلة موجوداً، نعود إليه متى شئنا، ونطبخه تماماً كما كانت تصنعه. رحمها الله وأسكنها فسيح جناته.",
-  footerLine: "وصفة تيتا زينب — دفتر أكل العيلة",
+  footerLine: "وصفات تيتا زينب — دفتر أكل العيلة",
   footerSub: "الله يرحمها",
   sectionCategories: "الأقسام",
   countRecipes: "وصفة",
@@ -236,11 +250,18 @@ const arFormal: Dict = {
   sourceFriend: "من صحاب الجدة",
   notFoundTitle: "هذه الصفحة غير موجودة",
   notFoundBody: "قد تكون الوصفة قد انتقلت إلى مكان آخر — لنَعُد إلى المطبخ.",
-  notFoundBack: "العودة إلى وصفة تيتا زينب",
+  notFoundBack: "العودة إلى وصفات تيتا زينب",
   notFoundHome: "تصفّح الوصفات",
   navAbout: "عن الموقع",
   navSurprise: "فاجئني",
-  aboutTitle: "عن وصفة تيتا زينب",
+  navHistory: "الوصفات التي أنهيتها",
+  historyTitle: "الوصفات التي أنهيتَ طهيها",
+  historyEmpty: "لم تُنهِ تحضير أي وصفة بعد.",
+  historyOnce: "طُهيت مرة واحدة",
+  historyTimes: "مرات",
+  historyLast: "آخر مرة",
+  footerDev: "تم تطوير الموقع من قبل حفيدها أحمد سامح",
+  aboutTitle: "عن وصفات تيتا زينب",
   ratingTitle: "التقييم",
   ratingYours: "تقييمك",
   ratingClear: "مسح",
@@ -272,10 +293,15 @@ const arEG: Dict = {
   settingsTheme: "الشكل",
   notFoundTitle: "الصفحة دي مش موجودة",
   notFoundBody: "يمكن الوصفة اتنقلت مكان… تعالى نرجع تاني.",
-  notFoundBack: "ارجع لوصفة تيتا زينب",
+  notFoundBack: "ارجع لوصفات تيتا زينب",
   notFoundHome: "اتفرج على الوصفات",
   navAbout: "عن الموقع",
-  aboutTitle: "عن وصفة تيتا زينب",
+  navHistory: "الوصفات اللي خلّصتها",
+  historyTitle: "الوصفات اللي خلّصت تحضيرها",
+  historyEmpty: "لسه ما خلّصتش تحضير أي وصفة.",
+  historyOnce: "اتعملت مرة",
+  historyTimes: "مرات",
+  aboutTitle: "عن وصفات تيتا زينب",
   scaleHint: "زوّد أو قلّل المقادير حسب اللي بتطبخه.",
 };
 

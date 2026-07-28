@@ -19,7 +19,7 @@ export default function OpengraphImage({
 }) {
   const bundle = getRecipeBundle(params.id);
   if (!bundle) {
-    return renderOgImage({ title: "وصفة تيتا زينب", chip: "أكل العيلة" });
+    return renderOgImage({ title: "وصفات تيتا زينب", chip: "أكل العيلة" });
   }
   const c = bundle.content["ar-EG"] ?? bundle.content.ar;
   const category = categoryBySlug(bundle.categorySlug);

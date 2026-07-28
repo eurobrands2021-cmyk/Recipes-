@@ -2,7 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
 import { CookingTimer } from "./cooking-timer";
+import { useHistory } from "./history-provider";
 import { useSettings } from "./settings-provider";
 import { parseDurationSeconds, servingChecks } from "@/lib/cooking";
 import { ingredientEmoji, stepEmoji } from "@/lib/emoji";
@@ -45,6 +47,8 @@ export function CookingMode({
   onClose: () => void;
 }) {
   const { locale, t } = useSettings();
+  const { record } = useHistory();
+  const router = useRouter();
   const lsKey = `teta.cooking.${recipeId}`;
   const [state, setState] = useState<CookingState>(emptyState);
   // Render into <body> so the full-screen overlay escapes the page's stacking
@@ -338,8 +342,19 @@ export function CookingMode({
                 type="button"
                 className={`${primaryBtn} flex-1`}
                 onClick={() => {
-                  if (state.finished) onClose();
-                  else update({ finished: true });
+                  if (state.finished) {
+                    onClose();
+                    router.push("/history");
+                    return;
+                  }
+                  // Finished the last step: log it, celebrate briefly, then
+                  // take the cook to their history page automatically.
+                  update({ finished: true });
+                  record(recipeId);
+                  window.setTimeout(() => {
+                    onClose();
+                    router.push("/history");
+                  }, 1400);
                 }}
               >
                 {state.finished ? t("cookingExit") : t("cookingFinish")}

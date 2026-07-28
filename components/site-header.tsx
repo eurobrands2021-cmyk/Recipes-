@@ -46,6 +46,18 @@ export function SiteHeader() {
             </svg>
           </Link>
           <Link
+            href="/history"
+            aria-label={t("navHistory")}
+            title={t("navHistory")}
+            className={`${iconBtn} ${pathname === "/history" ? active : ""}`}
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M12 8v4l3 2" />
+              <path d="M3.05 11a9 9 0 1 1 .5 4" />
+              <path d="M3 4v4h4" />
+            </svg>
+          </Link>
+          <Link
             href="/settings"
             aria-label={t("navSettings")}
             title={t("navSettings")}

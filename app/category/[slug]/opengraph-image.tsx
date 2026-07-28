@@ -2,7 +2,7 @@ import { renderOgImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og/og-image";
 import { categories, categoryBySlug } from "@/lib/categories";
 import { categoryCounts } from "@/lib/localized";
 
-export const alt = "قسم من وصفة تيتا زينب";
+export const alt = "قسم من وصفات تيتا زينب";
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
 
@@ -17,7 +17,7 @@ export default function OpengraphImage({
 }) {
   const category = categoryBySlug(params.slug);
   if (!category) {
-    return renderOgImage({ title: "وصفة تيتا زينب", chip: "أكل العيلة" });
+    return renderOgImage({ title: "وصفات تيتا زينب", chip: "أكل العيلة" });
   }
   const count = categoryCounts()[category.slug] ?? 0;
   return renderOgImage({
