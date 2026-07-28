@@ -28,7 +28,10 @@ export function SiteHeader() {
               <path d="M5 21h14" />
             </svg>
           </span>
-          <span className="min-w-0 break-words font-display text-lg font-bold leading-tight tracking-tight text-ink-800 group-hover:text-accent-600 dark:text-cream-100 dark:group-hover:text-accent-400">
+          {/* Wordmark stays on ONE line; on narrow phones there isn't room for
+              it beside the quick-action icons, so we show the logo mark alone
+              and bring the name back once it fits (never wrap/stack it). */}
+          <span className="hidden min-w-0 truncate font-display text-lg font-bold tracking-tight text-ink-800 group-hover:text-accent-600 min-[500px]:block dark:text-cream-100 dark:group-hover:text-accent-400">
             {t("appName")}
           </span>
         </Link>
